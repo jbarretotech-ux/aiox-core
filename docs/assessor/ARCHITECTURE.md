@@ -1,6 +1,6 @@
 # Arquitetura — Assessor Popular (codinome)
 
-> Status: **Draft v0.1** · 2026-09-25
+> Status: **v0.2** · 2026-09-25 (decisões D2–D6 aceitas)
 > Produto: assessor financeiro de IA no WhatsApp para a classe C/D — **R$ 19,90/mês**
 > Base: estudo de mercado em `docs/market-research/2026-09-25-meu-assessor.md`
 > Nome do produto e domínio: **a definir** (o codinome vale só até lá)
@@ -240,16 +240,16 @@ npm run as -- delete-user +5511...           # LGPD manual
 
 ---
 
-## 13. Decisões em aberto (precisam do dono)
+## 13. Decisões (aceitas em 2026-09-25: "usar as sugestões")
 
-| # | Decisão | Recomendação | Por quê |
+| # | Decisão | Escolha | Status |
 |---|---|---|---|
-| D1 | Nome e domínio | — | Marca |
-| D2 | Modelo de IA | **Claude Haiku 4.5** (US$ 1 / US$ 5 por MTok) com fallback para Sonnet 5 em perguntas difíceis | Custo por usuário cabe na meta. Confirmar com testes reais (eval) |
-| D3 | Speech-to-text | OpenAI `gpt-4o-mini-transcribe` (~US$ 0,003/min) ou Groq Whisper | Barato e bom em pt-BR. Testar com áudios reais |
-| D4 | PSP para Pix Automático | **Asaas** | Tem Pix Automático via API e é focado em PME. Taxa R$ 1–3 por cobrança |
-| D5 | Onde fica o código | `apps/assessor` neste monorepo (igual ao `apps/jotatech`) ou repositório separado | Repositório separado deixa deploy e acesso mais simples |
-| D6 | Número de WhatsApp | Número novo, dedicado, com verificação de empresa na Meta | Obrigatório para a Cloud API |
+| D1 | Nome e domínio | — | **Aberta** (segue o codinome "Assessor Popular") |
+| D2 | Modelo de IA | **Claude Haiku 4.5** (`claude-haiku-4-5`, US$ 1 / US$ 5 por MTok), configurável em `LLM_MODEL` | Aceita. Validar com o eval na AS-1.3 |
+| D3 | Speech-to-text | OpenAI `gpt-4o-mini-transcribe` (~US$ 0,003/min) | Aceita. Testar com áudios reais na AS-1.5 |
+| D4 | PSP para Pix Automático | **Asaas** | Aceita |
+| D5 | Onde fica o código | Repositório separado | Aceita, mas **bloqueada**: o GitHub negou à integração criar repositórios (403). Por enquanto o código fica em `apps/assessor` neste monorepo (padrão do jotatech) |
+| D6 | Número de WhatsApp | Número novo e dedicado, com verificação de empresa na Meta | Aceita. Providenciar antes da AS-1.4 |
 
 ---
 
