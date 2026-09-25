@@ -147,7 +147,9 @@ aiox-core/index.esm.js
 aiox-core/*.map
 
 # Applications (separate deployments, NOT part of npm package)
-apps/
+apps/*
+# JOTATECH community app is versioned here so Vercel can deploy it (Root Directory: apps/jotatech)
+!apps/jotatech/
 
 # External projects (separate repositories)
 aiox-guide-app/
