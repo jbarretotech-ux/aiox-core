@@ -1,6 +1,12 @@
 {
   "version": 1,
   "skills": {
+    "cli-routing": {
+      "source": "diegosouzapw/OmniRoute",
+      "sourceType": "github",
+      "skillPath": "skills/cli-routing/SKILL.md",
+      "computedHash": "8c391551675bf48d26be8055796591380558f69b07ab9c6beb1e41b6c0e52f15"
+    },
     "find-skills": {
       "source": "vercel-labs/skills",
       "sourceType": "github",
