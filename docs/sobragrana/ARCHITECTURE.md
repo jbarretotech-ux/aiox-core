@@ -1,9 +1,9 @@
-# Arquitetura — Assessor Popular (codinome)
+# Arquitetura — Sobra Grana
 
-> Status: **v0.2** · 2026-09-25 (decisões D2–D6 aceitas)
+> Status: **v0.3** · 2026-09-25 (decisões D1–D6 aceitas)
 > Produto: assessor financeiro de IA no WhatsApp para a classe C/D — **R$ 19,90/mês**
 > Base: estudo de mercado em `docs/market-research/2026-09-25-meu-assessor.md`
-> Nome do produto e domínio: **a definir** (o codinome vale só até lá)
+> Nome: **Sobra Grana** · domínio: **sobragrana.com.br** (livre no registro.br em 2026-09-25, registro pendente)
 
 ---
 
@@ -12,7 +12,7 @@
 1. O usuário conversa **só pelo WhatsApp**, por texto, áudio ou foto. Não existe app para instalar.
 2. Uma **IA com ferramentas** (tool use) registra gastos, contas a pagar e responde perguntas.
 3. Os dados ficam no **Supabase** (banco Postgres com login, arquivos e filas), e o código roda na **Vercel** (Next.js). É a mesma stack do projeto `apps/jotatech`.
-4. **CLI First:** todo o domínio funciona pelo terminal (`npm run as -- chat ...`) antes de ligar o WhatsApp.
+4. **CLI First:** todo o domínio funciona pelo terminal (`npm run sg -- chat ...`) antes de ligar o WhatsApp.
 5. **O custo por usuário é tratado como requisito.** O orçamento de IA e de mensagens é medido e limitado por usuário.
 
 ---
@@ -44,7 +44,7 @@
 flowchart LR
   U[Usuário<br/>WhatsApp] -->|mensagem| WA[WhatsApp Cloud API<br/>Meta]
   WA -->|webhook| WH[/api/webhooks/whatsapp<br/>Vercel/]
-  CLI[CLI<br/>npm run as] --> CORE
+  CLI[CLI<br/>npm run sg] --> CORE
   WH -->|grava + responde 200| DB[(Supabase<br/>Postgres)]
   WH -->|after| CORE[Orquestrador<br/>do assessor]
   CORE --> STT[Speech-to-text<br/>áudio → texto]
@@ -64,7 +64,7 @@ flowchart LR
 ## 4. Camadas (hexagonal, simples)
 
 ```
-apps/assessor/
+apps/sobragrana/
 ├── src/
 │   ├── core/                 # DOMÍNIO — funções puras, sem I/O
 │   │   ├── money.ts          # centavos, parse "32,50" → 3250
@@ -91,7 +91,7 @@ apps/assessor/
 │       ├── api/webhooks/billing/route.ts
 │       ├── api/cron/[job]/route.ts
 │       └── (site)/           # landing + página de pagamento
-├── scripts/as.mjs            # CLI
+├── scripts/sg.mjs            # CLI
 ├── supabase/migrations/      # schema versionado
 └── tests/
 ```
@@ -183,7 +183,7 @@ usage_events     (id, user_id fk, kind text in ('llm','stt','wa_template'),
 | Histórico | Últimas 10 mensagens + `conversation_state.summary` |
 | Mensagem ativa (template, paga) | No máximo **~8/mês** por usuário. Alerta e resumo saem dentro da janela de 24h quando der |
 | Áudio | Máx. 2 min por áudio. STT custa ~US$ 0,003–0,008/min |
-| Painel de custo | `npm run as -- costs` mostra o custo por usuário no mês |
+| Painel de custo | `npm run sg -- costs` mostra o custo por usuário no mês |
 
 **Meta de custo variável:** ≤ R$ 5 por usuário/mês, uns 25% de R$ 19,90.
 
@@ -217,14 +217,14 @@ usage_events     (id, user_id fk, kind text in ('llm','stt','wa_template'),
 ## 11. CLI (CLI First)
 
 ```
-npm run as -- status                         # testa Supabase, Meta, LLM, PSP
-npm run as -- chat +5511999990000 "gastei 20 no pão"   # conversa sem WhatsApp
-npm run as -- users [busca]                  # lista usuários
-npm run as -- user +5511...                  # detalhe + gastos + status
-npm run as -- costs [--month 2026-10]        # custo por usuário
-npm run as -- jobs run reminders|summary|retry
-npm run as -- subscription cancel +5511...
-npm run as -- delete-user +5511...           # LGPD manual
+npm run sg -- status                         # testa Supabase, Meta, LLM, PSP
+npm run sg -- chat +5511999990000 "gastei 20 no pão"   # conversa sem WhatsApp
+npm run sg -- users [busca]                  # lista usuários
+npm run sg -- user +5511...                  # detalhe + gastos + status
+npm run sg -- costs [--month 2026-10]        # custo por usuário
+npm run sg -- jobs run reminders|summary|retry
+npm run sg -- subscription cancel +5511...
+npm run sg -- delete-user +5511...           # LGPD manual
 ```
 
 `chat` usa o **mesmo orquestrador** do WhatsApp, e a resposta sai no terminal. Assim dá para desenvolver e testar tudo sem a Meta.
@@ -244,28 +244,28 @@ npm run as -- delete-user +5511...           # LGPD manual
 
 | # | Decisão | Escolha | Status |
 |---|---|---|---|
-| D1 | Nome e domínio | — | **Aberta** (segue o codinome "Assessor Popular") |
-| D2 | Modelo de IA | **Claude Haiku 4.5** (`claude-haiku-4-5`, US$ 1 / US$ 5 por MTok), configurável em `LLM_MODEL` | Aceita. Validar com o eval na AS-1.3 |
-| D3 | Speech-to-text | OpenAI `gpt-4o-mini-transcribe` (~US$ 0,003/min) | Aceita. Testar com áudios reais na AS-1.5 |
+| D1 | Nome e domínio | **Sobra Grana** · `sobragrana.com.br` (+ `.com` e `.ia.br` livres) | Aceita. Falta registrar o domínio e consultar marca no INPI |
+| D2 | Modelo de IA | **Claude Haiku 4.5** (`claude-haiku-4-5`, US$ 1 / US$ 5 por MTok), configurável em `LLM_MODEL` | Aceita. Validar com o eval na SG-1.3 |
+| D3 | Speech-to-text | OpenAI `gpt-4o-mini-transcribe` (~US$ 0,003/min) | Aceita. Testar com áudios reais na SG-1.5 |
 | D4 | PSP para Pix Automático | **Asaas** | Aceita |
-| D5 | Onde fica o código | Repositório separado | Aceita, mas **bloqueada**: o GitHub negou à integração criar repositórios (403). Por enquanto o código fica em `apps/assessor` neste monorepo (padrão do jotatech) |
-| D6 | Número de WhatsApp | Número novo e dedicado, com verificação de empresa na Meta | Aceita. Providenciar antes da AS-1.4 |
+| D5 | Onde fica o código | Repositório separado | Aceita, mas **bloqueada**: o GitHub negou à integração criar repositórios (403). Por enquanto o código fica em `apps/sobragrana` neste monorepo (padrão do jotatech) |
+| D6 | Número de WhatsApp | Número novo e dedicado, com verificação de empresa na Meta | Aceita. Providenciar antes da SG-1.4 |
 
 ---
 
-## 14. Plano de stories (Epic AS-1 — MVP)
+## 14. Plano de stories (Epic SG-1 — MVP)
 
 | Story | Entrega | Depende de |
 |---|---|---|
-| AS-1.1 | Esqueleto do app + Supabase + migrations + CLI `status` | D5 |
-| AS-1.2 | Domínio `core/` (dinheiro, transações, contas, resumo) + testes | 1.1 |
-| AS-1.3 | Orquestrador + ferramentas + `as chat` (sem WhatsApp) + eval de 50 frases | 1.2, D2 |
-| AS-1.4 | Webhook WhatsApp (texto) + idempotência + retry | 1.3, D6 |
-| AS-1.5 | Áudio (STT) e foto (visão) | 1.4, D3 |
-| AS-1.6 | Contas a pagar + cron de alertas + resumo semanal | 1.4 |
-| AS-1.7 | Assinatura R$ 19,90 (Pix Automático) + cancelar por mensagem | 1.4, D4 |
-| AS-1.8 | LGPD: consentimento, apagar dados, mascarar logs + controle de custo | 1.4 |
-| AS-1.9 | Landing page + checkout | 1.7, D1 |
+| SG-1.1 | Esqueleto do app + Supabase + migrations + CLI `status` | D5 |
+| SG-1.2 | Domínio `core/` (dinheiro, transações, contas, resumo) + testes | 1.1 |
+| SG-1.3 | Orquestrador + ferramentas + `as chat` (sem WhatsApp) + eval de 50 frases | 1.2, D2 |
+| SG-1.4 | Webhook WhatsApp (texto) + idempotência + retry | 1.3, D6 |
+| SG-1.5 | Áudio (STT) e foto (visão) | 1.4, D3 |
+| SG-1.6 | Contas a pagar + cron de alertas + resumo semanal | 1.4 |
+| SG-1.7 | Assinatura R$ 19,90 (Pix Automático) + cancelar por mensagem | 1.4, D4 |
+| SG-1.8 | LGPD: consentimento, apagar dados, mascarar logs + controle de custo | 1.4 |
+| SG-1.9 | Landing page + checkout | 1.7, D1 |
 
 Fluxo AIOX para cada story: `@sm` cria → `@po` valida → `@dev` implementa → `@qa` gate → `@devops` push.
 

@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react';
 
 export const metadata = {
-  title: 'Assessor Popular',
+  title: 'Sobra Grana',
   description: 'Seu assessor financeiro no WhatsApp por R$ 19,90/mês.',
 };
 

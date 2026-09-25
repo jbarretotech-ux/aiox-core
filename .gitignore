@@ -148,15 +148,15 @@ aiox-core/*.map
 
 # Applications (separate deployments, NOT part of npm package)
 apps/*
-# Assessor Popular app is versioned here until it moves to its own repository
-!apps/assessor/
+# Sobra Grana app is versioned here until it moves to its own repository
+!apps/sobragrana/
 
 # External projects (separate repositories)
 aiox-guide-app/
 examples/
 !docs/examples/
 supabase/
-!apps/assessor/supabase/
+!apps/sobragrana/supabase/
 
 # Output directories (generated artifacts)
 outputs/

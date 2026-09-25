@@ -1,15 +1,15 @@
-# Assessor Popular (codinome)
+# Sobra Grana
 
 Assessor financeiro de IA no WhatsApp para a classe C/D, a **R$ 19,90/mês**.
-Arquitetura: `docs/assessor/ARCHITECTURE.md` (na raiz do monorepo).
+Arquitetura: `docs/sobragrana/ARCHITECTURE.md` (na raiz do monorepo).
 
 ## Rodar localmente
 
 ```bash
-cd apps/assessor
+cd apps/sobragrana
 npm install
 cp .env.example .env.local   # preencha Supabase
-npm run as -- status         # confere ambiente e banco
+npm run sg -- status         # confere ambiente e banco
 npm run dev                  # http://localhost:3000  ·  /api/health
 ```
 
@@ -20,8 +20,8 @@ As migrations ficam em `supabase/migrations/`. Para aplicar no seu projeto Supab
 ## CLI
 
 ```bash
-npm run as -- help
-npm run as -- status
+npm run sg -- help
+npm run sg -- status
 ```
 
 ## Qualidade
@@ -32,4 +32,4 @@ npm test && npm run typecheck && npm run build
 
 ## Stories
 
-`docs/stories/` — o epic AS-1 (MVP) começa por `AS-1.1.story.md`.
+`docs/stories/` — o epic SG-1 (MVP) começa por `SG-1.1.story.md`.

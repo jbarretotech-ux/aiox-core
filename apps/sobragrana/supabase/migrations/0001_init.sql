@@ -1,4 +1,4 @@
--- AS-1.1 — Schema inicial do Assessor Popular
+-- SG-1.1 — Schema inicial do Sobra Grana
 -- Dinheiro sempre em centavos (integer). RLS ligado em todas as tabelas:
 -- o backend usa service_role (ignora RLS); acesso anônimo fica bloqueado por padrão.
 

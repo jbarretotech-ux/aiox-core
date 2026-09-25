@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 /**
- * Assessor CLI — opera o produto pelo terminal (CLI First).
+ * Sobra Grana CLI — opera o produto pelo terminal (CLI First).
  *
- * Uso:  npm run as -- <comando> [args]
+ * Uso:  npm run sg -- <comando> [args]
  *
  *   help      Mostra esta ajuda
  *   status    Confere variáveis de ambiente e a conexão com o Supabase
@@ -13,9 +13,9 @@ import { existsSync, readFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { checkEnv, parseArgs, parseEnv } from './lib/cli.mjs';
 
-const HELP = `Assessor CLI
+const HELP = `Sobra Grana CLI
 
-Uso: npm run as -- <comando> [args]
+Uso: npm run sg -- <comando> [args]
 
 Comandos:
   help      Mostra esta ajuda
