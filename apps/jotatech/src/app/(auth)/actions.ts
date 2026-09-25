@@ -61,15 +61,15 @@ export async function signUp(_prev: ActionResult | null, formData: FormData): Pr
     },
   });
   if (error) {
-    return {
-      ok: false,
-      message: error.message.toLowerCase().includes('registered')
-        ? 'Este e-mail já tem conta. Faça login.'
-        : `Não foi possível criar sua conta: ${error.message}`,
-    };
+    const msg = error.message.toLowerCase();
+    if (msg.includes('registered')) return { ok: false, message: 'Este e-mail já tem conta. Faça login.' };
+    // O banco recusa o cadastro (trigger handle_new_user) quando o código é inválido ou esgotou.
+    if (msg.includes('database error')) {
+      return { ok: false, message: 'Código de acesso inválido ou esgotado. Peça o código atualizado no grupo.' };
+    }
+    console.error('[jotatech] Failed to sign up', { error });
+    return { ok: false, message: `Não foi possível criar sua conta: ${error.message}` };
   }
-
-  await supabase.rpc('redeem_access_code', { p_code: code });
 
   if (!data.session) {
     return { ok: true, message: 'Conta criada! Confirme seu e-mail pelo link que enviamos e depois faça login.' };

@@ -46,15 +46,14 @@ npm run dev          # abre em http://localhost:3000
 4. **Deploy**
 5. No Supabase, em **Authentication → URL Configuration**, coloque o mesmo endereço em **Site URL**
 
-### 3. Virar administrador — 3 min
-1. Crie o primeiro código pela CLI (ou pelo SQL Editor: `insert into access_codes (code) values ('JOTA2026');`)
-2. Acesse `/cadastro`, crie sua conta com esse código
-3. Torne-se admin:
-   ```bash
-   cp .env.example .env.local   # preencha as 3 chaves
-   npm run jt -- make-admin seu@email.com
-   ```
-4. Entre em `/admin`
+### 3. Virar administrador — 1 min
+1. Acesse `/cadastro` e use o código **`JOTA-ADMIN`** (uso único, já criado pelo `schema.sql`)
+2. A **primeira conta criada vira admin automaticamente**
+3. Entre em `/admin` e crie os códigos para o grupo do WhatsApp
+
+Para promover outra pessoa depois: `npm run jt -- make-admin email@x.com` (precisa da `SUPABASE_SERVICE_ROLE_KEY` em `.env.local`).
+
+> Segurança: o banco só aceita cadastro com código de acesso válido — mesmo quem tentar criar conta direto pela API do Supabase é recusado.
 
 ## CLI (administração pelo terminal)
 
