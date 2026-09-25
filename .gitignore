@@ -156,6 +156,8 @@ aiox-guide-app/
 examples/
 !docs/examples/
 supabase/
+!apps/jotatech/supabase/
+!apps/jotatech/src/lib/supabase/
 
 # Output directories (generated artifacts)
 outputs/
