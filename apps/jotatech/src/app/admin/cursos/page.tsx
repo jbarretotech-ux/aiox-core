@@ -11,7 +11,16 @@ export default async function AdminCourses() {
     <div className="space-y-8">
       <div>
         <h1 className="font-display text-2xl font-bold">Cursos e aulas</h1>
-        <p className="text-sm text-mute">Estrutura: Curso → Módulos → Aulas. Clique em um curso para gerenciar módulos e aulas.</p>
+        <p className="text-sm text-mute">Clique em um curso para gerenciar módulos e aulas.</p>
+      </div>
+
+      <div className="grid gap-3 sm:grid-cols-4">
+        {['Crie o curso (abaixo)', 'Abra o curso e crie um módulo', 'No módulo, clique em “Criar aula”', 'Suba o vídeo e pronto'].map((step, i) => (
+          <div key={step} className="card flex items-center gap-3 p-3 text-sm">
+            <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-brand font-bold text-ink">{i + 1}</span>
+            {step}
+          </div>
+        ))}
       </div>
 
       <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">

@@ -61,6 +61,12 @@ export default async function AdminCourseEdit({ params }: { params: Promise<{ id
 
       <section className="space-y-4">
         <h2 className="font-display text-lg font-bold">Módulos e aulas</h2>
+        {course.modules.length === 0 && (
+          <div className="rounded-xl border border-brand/30 bg-brand/5 p-4 text-sm text-soft">
+            <strong className="text-white">Próximo passo:</strong> crie um módulo logo abaixo (ex: &quot;Boas-vindas&quot;). Depois,
+            dentro do módulo, adicione a aula e suba o vídeo.
+          </div>
+        )}
         {course.modules.map((m, i) => (
           <div key={m.id} className="card overflow-hidden">
             <div className="flex items-center justify-between gap-3 border-b border-line p-4">
@@ -85,15 +91,18 @@ export default async function AdminCourseEdit({ params }: { params: Promise<{ id
                     {!l.video_url && <span className="ml-2 rounded bg-white/10 px-1.5 text-[10px] text-mute">sem vídeo</span>}
                     {!l.published && <span className="ml-2 rounded bg-white/10 px-1.5 text-[10px] text-mute">oculta</span>}
                   </span>
-                  <Link href={`/admin/aulas/${l.id}`} className="text-brand hover:underline">Editar</Link>
+                  <Link href={`/admin/aulas/${l.id}`} className="rounded-md bg-brand/15 px-2.5 py-1 text-xs font-bold text-brand hover:bg-brand/25">
+                    {l.video_url ? 'Editar aula' : '🎬 Subir vídeo'}
+                  </Link>
                 </li>
               ))}
             </ol>
 
             <div className="grid gap-6 p-4 md:grid-cols-2">
               <div>
-                <h3 className="mb-2 text-sm font-bold">+ Adicionar aula</h3>
-                <AdminForm action={createLesson} submitLabel="Criar aula" className="space-y-3">
+                <h3 className="mb-1 text-sm font-bold">+ Adicionar aula neste módulo</h3>
+                <p className="mb-2 text-xs text-mute">Digite o título e clique em Criar aula. Na tela seguinte você sobe o vídeo.</p>
+                <AdminForm action={createLesson} submitLabel="Criar aula e subir vídeo →" className="space-y-3">
                   <input type="hidden" name="module_id" value={m.id} />
                   <input type="hidden" name="position" value={m.lessons.length} />
                   <input name="title" required placeholder="Título da aula" className="input" />

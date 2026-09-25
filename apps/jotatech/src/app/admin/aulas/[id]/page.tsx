@@ -2,8 +2,8 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { deleteLesson, saveLesson } from '@/app/admin/actions';
 import { AdminForm } from '@/components/admin-form';
-import { UploadField } from '@/components/upload-field';
 import { VideoPlayer } from '@/components/video-player';
+import { VideoUploader } from '@/components/video-uploader';
 import { getCatalog } from '@/lib/data';
 import { materialsToText } from '@/lib/format';
 
@@ -18,26 +18,18 @@ export default async function AdminLessonEdit({ params }: { params: Promise<{ id
     <div className="space-y-6">
       <div>
         <Link href={`/admin/cursos/${course.id}`} className="text-sm text-mute hover:text-white">← {course.title}</Link>
-        <h1 className="font-display mt-1 text-2xl font-bold">Editar aula</h1>
+        <h1 className="font-display mt-1 text-2xl font-bold">Editar aula: {lesson.title}</h1>
       </div>
 
       <div className="grid gap-6 xl:grid-cols-[1fr_420px]">
-        <section className="card p-6">
-          <AdminForm action={saveLesson}>
+        <section className="card min-w-0 p-6">
+          <AdminForm action={saveLesson} submitLabel="Salvar aula">
             <input type="hidden" name="id" value={lesson.id} />
             <div>
               <label className="label" htmlFor="title">Título</label>
               <input id="title" name="title" required defaultValue={lesson.title} className="input" />
             </div>
-            <UploadField
-              name="video_url"
-              label="Vídeo da aula"
-              defaultValue={lesson.video_url}
-              accept="video/*"
-              folder="videos"
-              placeholder="https://youtu.be/... ou link do Vimeo / Panda / Bunny"
-              hint="Recomendado: YouTube (não listado), Vimeo, Panda Video ou Bunny Stream — é só colar o link. Upload direto aceita até 50MB (plano grátis do Supabase)."
-            />
+            <VideoUploader name="video_url" defaultValue={lesson.video_url} />
             <div>
               <label className="label" htmlFor="description">Descrição / resumo da aula</label>
               <textarea id="description" name="description" rows={5} defaultValue={lesson.description} className="input" />
@@ -78,7 +70,7 @@ export default async function AdminLessonEdit({ params }: { params: Promise<{ id
           </AdminForm>
         </section>
 
-        <aside className="space-y-4">
+        <aside className="min-w-0 space-y-4">
           <div className="card p-4">
             <h2 className="mb-3 text-sm font-bold">Pré-visualização</h2>
             <VideoPlayer url={lesson.video_url} title={lesson.title} />
