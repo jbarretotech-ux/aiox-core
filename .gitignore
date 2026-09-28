@@ -150,6 +150,8 @@ aiox-core/*.map
 apps/*
 # Sobra Grana app is versioned here until it moves to its own repository
 !apps/sobragrana/
+# JOTATECH community app is versioned here so Vercel can deploy it (Root Directory: apps/jotatech)
+!apps/jotatech/
 
 # External projects (separate repositories)
 aiox-guide-app/
@@ -157,6 +159,8 @@ examples/
 !docs/examples/
 supabase/
 !apps/sobragrana/supabase/
+!apps/jotatech/supabase/
+!apps/jotatech/src/lib/supabase/
 
 # Output directories (generated artifacts)
 outputs/

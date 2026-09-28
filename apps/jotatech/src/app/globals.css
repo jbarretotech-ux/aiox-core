@@ -1,0 +1,73 @@
+@import 'tailwindcss';
+
+@theme {
+  --color-ink: #07080c;
+  --color-panel: #0f1118;
+  --color-panel-2: #161923;
+  --color-line: #232736;
+  --color-mute: #8b91a7;
+  --color-soft: #c9cde0;
+  --color-brand: #19e68c;
+  --color-brand-2: #7c5cff;
+  --color-brand-dark: #0b8f57;
+  --color-danger: #ff5a6a;
+  --font-sans: var(--font-inter), system-ui, sans-serif;
+  --font-display: var(--font-sora), var(--font-inter), system-ui, sans-serif;
+}
+
+html {
+  color-scheme: dark;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-ink);
+  color: #f4f5fa;
+  -webkit-font-smoothing: antialiased;
+}
+
+.text-gradient {
+  background: linear-gradient(90deg, var(--color-brand), #5ef0ff 55%, var(--color-brand-2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.bg-grid {
+  background-image:
+    linear-gradient(to right, rgb(255 255 255 / 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(255 255 255 / 0.04) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { scrollbar-width: none; }
+
+@layer components {
+.input {
+  width: 100%;
+  border-radius: 0.75rem;
+  border: 1px solid var(--color-line);
+  background: var(--color-panel-2);
+  padding: 0.7rem 0.9rem;
+  font-size: 0.95rem;
+  color: #fff;
+  outline: none;
+}
+.input:focus { border-color: var(--color-brand); box-shadow: 0 0 0 3px rgb(25 230 140 / 0.15); }
+.label { display: block; font-size: 0.8rem; font-weight: 600; color: var(--color-soft); margin-bottom: 0.35rem; }
+
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
+  border-radius: 0.75rem; padding: 0.7rem 1.2rem; font-weight: 700; font-size: 0.95rem;
+  transition: transform .15s, background .15s, opacity .15s;
+}
+.btn:active { transform: scale(.98); }
+.btn:disabled { opacity: .6; cursor: not-allowed; }
+.btn-primary { background: var(--color-brand); color: #04110a; }
+.btn-primary:hover { background: #3ff2a3; }
+.btn-ghost { border: 1px solid var(--color-line); background: var(--color-panel-2); color: #fff; }
+.btn-ghost:hover { border-color: var(--color-mute); }
+.btn-danger { background: rgb(255 90 106 / .12); color: var(--color-danger); border: 1px solid rgb(255 90 106 / .3); }
+.card { border: 1px solid var(--color-line); background: var(--color-panel); border-radius: 1rem; }
+}

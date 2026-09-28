@@ -22,6 +22,8 @@ module.exports = [
       '**/.next/**',
       // Dashboard has its own ESLint config
       'apps/dashboard/**',
+      // JOTATECH app (Next.js) has its own tooling
+      'apps/jotatech/**',
       '**/.aiox-core/_legacy-v4.31.0/**',
       '**/web-bundles/**',
       '**/*.min.js',
