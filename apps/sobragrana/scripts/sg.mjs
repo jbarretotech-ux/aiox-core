@@ -6,6 +6,7 @@
  *
  *   help      Mostra esta ajuda
  *   status    Confere variáveis de ambiente e a conexão com o Supabase
+ *   money     Lê um valor em reais ("R$ 32,50") e mostra os centavos
  *
  * Lê .env.local e .env (sem sobrescrever o ambiente).
  */
@@ -20,6 +21,7 @@ Uso: npm run sg -- <comando> [args]
 Comandos:
   help      Mostra esta ajuda
   status    Confere variáveis de ambiente e a conexão com o Supabase
+  money     Lê um valor em reais e mostra os centavos. Ex.: money "R$ 32,50"
 `;
 
 function loadEnv() {
@@ -71,9 +73,20 @@ async function status() {
   process.exitCode = failed ? 1 : 0;
 }
 
+async function money(text) {
+  const { formatBRL, parseMoney } = await import('../src/core/money.ts');
+  const cents = parseMoney(text ?? '');
+  if (cents === null) {
+    console.error(`✖ Não achei um valor em: "${text ?? ''}"`);
+    process.exitCode = 1;
+    return;
+  }
+  console.log(`✔ ${cents} centavos → ${formatBRL(cents)}`);
+}
+
 async function main() {
   loadEnv();
-  const { command } = parseArgs(process.argv.slice(2));
+  const { command, positional } = parseArgs(process.argv.slice(2));
 
   switch (command) {
     case 'help':
@@ -83,6 +96,9 @@ async function main() {
       return;
     case 'status':
       await status();
+      return;
+    case 'money':
+      await money(positional.join(' '));
       return;
     default:
       console.error(`✖ Comando desconhecido: ${command}\n`);

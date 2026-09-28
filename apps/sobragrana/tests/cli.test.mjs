@@ -42,3 +42,13 @@ test('checkEnv ok quando todas as variáveis do grupo existem', () => {
   const env = Object.fromEntries(REQUIRED_ENV.core.map((key) => [key, 'v']));
   assert.equal(checkEnv(env).core.ok, true);
 });
+
+test('CLI money mostra centavos e sai com erro sem valor', async () => {
+  const { spawnSync } = await import('node:child_process');
+  const script = new URL('../scripts/sg.mjs', import.meta.url).pathname;
+  const ok = spawnSync(process.execPath, [script, 'money', 'R$ 32,50'], { encoding: 'utf8' });
+  assert.equal(ok.status, 0);
+  assert.match(ok.stdout, /3250 centavos → R\$ 32,50/);
+  const bad = spawnSync(process.execPath, [script, 'money', 'oi'], { encoding: 'utf8' });
+  assert.equal(bad.status, 1);
+});

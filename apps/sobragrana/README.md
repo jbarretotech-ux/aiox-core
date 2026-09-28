@@ -22,6 +22,7 @@ As migrations ficam em `supabase/migrations/`. Para aplicar no seu projeto Supab
 ```bash
 npm run sg -- help
 npm run sg -- status
+npm run sg -- money "R$ 32,50"   # testa a leitura de valores do core
 ```
 
 ## Qualidade

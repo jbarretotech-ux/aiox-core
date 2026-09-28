@@ -2,6 +2,7 @@
   "name": "sobragrana",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "description": "Assessor financeiro de IA no WhatsApp para a classe C/D",
   "scripts": {
     "dev": "next dev",
