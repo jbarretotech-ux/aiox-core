@@ -4,19 +4,19 @@ import { MEDIA } from '@/media';
 
 export function Cta() {
   return (
-    <section id="contact" className="relative overflow-hidden">
+    <section id="contato" className="relative overflow-hidden">
       <BgVideo src={MEDIA.cta} className="block h-auto w-full" />
 
-      <div id="faq" className="absolute inset-0 flex items-center justify-end px-5 sm:px-8 lg:pl-[15%] lg:pr-[20%]">
+      <div id="resultados" className="absolute inset-0 flex items-center justify-end px-5 sm:px-8 lg:pl-[15%] lg:pr-[20%]">
         <div className="relative">
           <span className="pointer-events-none absolute -left-2 -top-5 -rotate-2 font-condiment text-[17px] normal-case text-neon mix-blend-exclusion sm:-top-9 sm:text-[28px] md:-top-12 md:text-[44px] lg:-left-10 lg:-top-[4.5rem] lg:text-[68px]">
-            Go beyond
+            Próximo nível
           </span>
           <h2 className="font-grotesk text-[16px] uppercase leading-[1.1] sm:text-[28px] md:text-[40px] lg:text-[60px]">
-            <span className="mb-4 block sm:mb-6 md:mb-8 lg:mb-12">Join us.</span>
-            <span className="block">Reveal what&apos;s hidden.</span>
-            <span className="block">Define what&apos;s next.</span>
-            <span className="block">Follow the signal.</span>
+            <span className="mb-4 block sm:mb-6 md:mb-8 lg:mb-12">Fale com a Mars.</span>
+            <span className="block">Automatize processos.</span>
+            <span className="block">Venda todos os dias.</span>
+            <span className="block">Cresça com IA.</span>
           </h2>
         </div>
       </div>
