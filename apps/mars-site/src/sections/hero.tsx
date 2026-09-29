@@ -11,8 +11,8 @@ export function Hero() {
 
       <div className="relative mx-auto flex min-h-screen max-w-[1831px] flex-col px-5 pb-16 pt-6 sm:px-8 md:px-12 lg:px-16 lg:pt-10">
         <header className="relative flex items-center justify-between lg:justify-start">
-          <a href="#homepage" className="font-grotesk text-[16px] uppercase tracking-wide">
-            JTEC
+          <a href="#homepage" aria-label="MARS — página inicial" className="block shrink-0">
+            <img src="/mars-logo.png" alt="MARS" width={1498} height={300} className="h-6 w-auto sm:h-7 lg:h-8" />
           </a>
 
           <nav className="liquid-glass absolute left-1/2 top-1/2 hidden -translate-x-1/2 -translate-y-1/2 rounded-[28px] px-[52px] py-[24px] lg:block">

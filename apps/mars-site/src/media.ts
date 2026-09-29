@@ -7,7 +7,7 @@ export const MEDIA = {
 } as const;
 
 export const SOCIAL_LINKS = {
-  mail: 'mailto:contato@jtec.com.br',
+  mail: 'mailto:contato@mars.com.br',
   twitter: 'https://x.com/',
   github: 'https://github.com/jbarretotech-ux',
 } as const;

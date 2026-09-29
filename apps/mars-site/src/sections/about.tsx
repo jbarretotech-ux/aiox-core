@@ -23,10 +23,10 @@ export function About() {
             <h2 className="font-grotesk text-[32px] uppercase leading-[1.05] sm:text-[44px] md:text-[52px] lg:text-[60px]">
               Hello!
               <br />
-              I&apos;m JTEC
+              I&apos;m Mars
             </h2>
             <span className="pointer-events-none absolute -bottom-7 -right-16 -rotate-2 font-condiment text-[36px] normal-case text-neon mix-blend-exclusion sm:-right-20 sm:text-[48px] md:text-[58px] lg:-bottom-9 lg:-right-24 lg:text-[68px]">
-              Jtec
+              Mars
             </span>
           </div>
 

@@ -24,7 +24,7 @@ module.exports = [
       'apps/dashboard/**',
       // JOTATECH app (Next.js) has its own tooling
       'apps/jotatech/**',
-      'apps/jtec-site/**',
+      'apps/mars-site/**',
       '**/.aiox-core/_legacy-v4.31.0/**',
       '**/web-bundles/**',
       '**/*.min.js',
