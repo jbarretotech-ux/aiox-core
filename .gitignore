@@ -150,6 +150,7 @@ aiox-core/*.map
 apps/*
 # JOTATECH community app is versioned here so Vercel can deploy it (Root Directory: apps/jotatech)
 !apps/jotatech/
+!apps/mars-site/
 
 # External projects (separate repositories)
 aiox-guide-app/
