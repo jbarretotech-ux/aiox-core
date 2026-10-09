@@ -1,11 +1,4 @@
 {
-  "rewrites": [
-    {
-      "source": "/",
-      "has": [{ "type": "host", "value": "(www\\.)?skyus\\.com\\.br" }],
-      "destination": "/portal/index.html"
-    }
-  ],
   "headers": [
     {
       "source": "/media/(.*)",
