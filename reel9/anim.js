@@ -1,0 +1,23 @@
+const T=[3.95,7.08,10.75,14.05,17.83], NEXT=[7.0,10.65,13.95,17.7,20.6];
+show("#s1",0); kick("#s1",0);
+tl.from("#b5",{scale:3,opacity:0,duration:.35,ease:"power4.in"},.05); shake(.4,16); flash(.4,"#ff4d4d");
+tl.to("#b5",{x:8,duration:.05,yoyo:true,repeat:11,ease:"none"},1.0);
+inLines("#s1",1.4);
+tl.from("#warn",{scale:0,rotation:-30,duration:.4,ease:"back.out(3)"},.6);
+tl.to("#warn",{opacity:.3,duration:.25,yoyo:true,repeat:71,ease:"none"},1.0);
+hide("#s1",3.75);
+for(let i=0;i<5;i++){const n=i+1,t=T[i];
+ flash(t,"#ff4d4d"); show("#e"+n,t);
+ tl.from("#c"+n,{scale:.7,rotation:i%2?4:-4,opacity:0,duration:.35,ease:"back.out(2)"},t);
+ tl.from("#xx"+n,{scale:0,duration:.3,ease:"back.out(3)"},t+.25);
+ tl.from("#ex"+n,{opacity:0,y:20,duration:.3},t+.6);
+ shake(t+.05,14);
+ tl.to("#c"+n,{x:10,duration:.04,yoyo:true,repeat:5,ease:"none"},t+.9);
+ if(n<5) tl.to("#e"+n,{opacity:0,scale:.9,duration:.2,ease:"power2.in"},NEXT[i]);}
+tl.to("#warn",{opacity:0,duration:.2},19.8);
+tl.call(()=>{},null,19.9);
+tl.set("#c5",{className:"ecard good"},19.9); tl.set("#xx5",{textContent:"✓"},19.9); tl.set("#ex5",{textContent:"✓ use skill: craque na hora"},19.9);
+tl.set("#c5",{className:"ecard"},0);
+tl.fromTo("#c5",{scale:1},{scale:1.08,duration:.2,yoyo:true,repeat:1,ease:"back.out(2)"},19.9); flash(19.9,"#3ddc84");
+tl.to("#e5",{opacity:0,scale:.9,duration:.2},20.5);
+cta(20.7,21.2);
