@@ -1,0 +1,18 @@
+@font-face{font-family:Caveat;font-weight:700;src:url(../lib/fonts/caveat-latin-700-normal.woff2)}
+.cta{font-weight:900;font-size:118px;line-height:.95;letter-spacing:-.045em}
+.box{margin-top:50px;display:inline-block;background:var(--or);color:var(--bg);font-weight:900;letter-spacing:-.06em;padding:6px 56px 26px;border-radius:40px;line-height:1}
+.cm{margin-top:56px;display:flex;gap:26px;align-items:center;background:var(--card);border:2px solid var(--line);border-radius:30px;padding:30px 34px;width:760px}
+.av{width:92px;height:92px;border-radius:50%;background:linear-gradient(135deg,var(--or),#ffcf6a);flex:none}
+.cm .u{font:800 30px JB;color:var(--mut)}.cm .t{font-weight:800;font-size:50px}
+.big{font-weight:900;font-size:215px;letter-spacing:-.06em;line-height:.85;color:var(--or);white-space:nowrap}
+.unit{font-weight:800;font-size:72px;letter-spacing:-.03em;margin-top:18px}
+
+.paper{position:relative;margin-top:40px;width:920px;height:640px;border-radius:30px;background:#fbf6ee;overflow:hidden;background-image:linear-gradient(#e7ddcf 2px,transparent 2px);background-size:100% 64px}
+.paper svg{position:absolute;inset:0;width:100%;height:100%}
+.dw{fill:none;stroke:#1b1410;stroke-width:9;stroke-linecap:round;stroke-linejoin:round}
+.dwo{fill:none;stroke:#ff6a1a;stroke-width:11;stroke-linecap:round;stroke-linejoin:round}
+.hand{font-family:Caveat,cursive;font-weight:700;fill:#1b1410;font-size:74px}
+.pen{position:absolute;width:110px;height:110px;color:var(--or);filter:drop-shadow(0 8px 10px rgba(0,0,0,.4))}
+.circ{fill:none;stroke:#ff6a1a;stroke-width:12;stroke-linecap:round}
+.code{position:relative;display:inline-block;font:800 90px JB;color:var(--mut);margin-top:30px}
+.code i{position:absolute;left:-20px;right:-20px;top:50%;height:12px;background:var(--red);border-radius:6px;transform-origin:left}

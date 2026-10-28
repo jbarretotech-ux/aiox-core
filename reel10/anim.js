@@ -1,0 +1,26 @@
+function draw(sel,t,d){document.querySelectorAll(sel).forEach(p=>{const L=p.getTotalLength?p.getTotalLength():800;p.style.strokeDasharray=L;p.style.strokeDashoffset=L;tl.to(p,{strokeDashoffset:0,duration:d||.8,ease:"power1.inOut"},t)})}
+show("#s1",0); inLines("#s1",.05); kick("#s1",0);
+tl.from("#p1",{y:100,opacity:0,duration:.4,ease:E},.4);
+draw("#bulb",.6,.9); draw("#bulb2",1.4,.6);
+tl.from("#tx1",{opacity:0,duration:.2},2.0);
+tl.fromTo("#pen1",{x:-260,y:300},{x:0,y:0,duration:1.4,ease:"sine.inOut"},.6);
+hide("#s1",2.65);
+flash(2.82); show("#s2",2.82); kick("#s2",2.82);
+draw("#rob",2.9,1.0); draw("#hat",3.7,.6); draw("#spk",4.2,.4);
+tl.from("#tx2",{opacity:0,y:20,duration:.3},4.5);
+tl.to("#spk",{rotation:90,transformOrigin:"720px 220px",duration:.6},4.6);
+hide("#s2",5.45);
+flash(5.6); show("#s3",5.6); kick("#s3",5.6);
+["#l1","#l2","#l3"].forEach((id,i)=>tl.from(id,{opacity:0,x:-30,duration:.35,ease:E},5.8+i*.4));
+draw("#arr",7.6,.4);
+tl.from("#md",{scale:0,transformOrigin:"460px 520px",duration:.4,ease:"back.out(2)"},8.0); shake(8.1);
+hide("#s3",10.5);
+flash(10.65); show("#s4",10.65); kick("#s4",10.65);
+tl.from("#s4 .big",{scale:.6,opacity:0,duration:.5,ease:E},10.7);
+const c={v:0};tl.to(c,{v:400,duration:1.6,ease:"power2.out",onUpdate:()=>{document.getElementById("cnt").textContent=Math.round(c.v)}},10.9);
+draw("#circ",12.4,.7);
+tl.from("#s4 .unit",{opacity:0,y:30,duration:.4,ease:E},12.3);
+hide("#s4",15.3);
+flash(15.45); show("#s_st",15.45); kick("#s_st",15.45); steps(15.45,16.8,17.85,18.75);
+hide("#s_st",19.6);
+cta(19.75,20.2);
