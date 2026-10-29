@@ -1,6 +1,10 @@
 show("#s1",0); inLines("#s1",0); kick("#s1",0);
 tl.fromTo("#sales",{scale:1},{scale:1.12,duration:.22,yoyo:true,repeat:3,ease:"sine.inOut"},.5);
-tl.to("#ring",{strokeDashoffset:0,duration:.5,ease:"power2.out"},1.8); shake(2.45,14); flash(2.45,"#ff4d4d");
+tl.to("#ring",{strokeDashoffset:0,duration:.45,ease:"power2.out"},1.8);
+tl.to("#hp",{"--s":1,color:"#fff",duration:.3,ease:"power2.out"},1.95);
+tl.set("#ans",{opacity:1},2.2);tl.fromTo("#ans",{scale:3.2,rotation:-25},{scale:1,rotation:-6,duration:.35,ease:"back.out(2)"},2.2);
+shake(2.4,18); flash(2.4,"#ff4d4d");
+tl.to("#ans",{scale:1.08,duration:.15,yoyo:true,repeat:1,ease:"sine.inOut"},2.6);
 hide("#s1",2.85);
 flash(2.98); show("#s2",2.98); kick("#s2",2.98);
 tl.from("#r1",{x:-120,opacity:0,duration:.35,ease:E},3.05);

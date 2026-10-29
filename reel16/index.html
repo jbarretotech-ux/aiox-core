@@ -70,14 +70,20 @@ html,body{width:1080px;height:1920px;overflow:hidden;background:var(--bg);color:
 .robo{display:inline-block;margin-top:36px;background:var(--grn);color:var(--bg);font:800 42px JB;padding:14px 26px;border-radius:16px;transform:rotate(-3deg)}
 .big{font-size:240px}
 #s1{opacity:1}
+
+.hp{position:relative;display:inline-block;padding:0 6px;border-radius:8px}
+.hp:before{content:"";position:absolute;inset:-4px -2px;background:var(--red);border-radius:10px;z-index:-1;transform:scaleX(var(--s,0));transform-origin:left}
+.post .pt{position:relative;z-index:1}
+.ans{position:absolute;left:50%;top:62%;transform:translate(-50%,-50%) rotate(-6deg);background:var(--red);color:#fff;font-weight:900;font-size:64px;line-height:1;text-align:center;padding:26px 40px;border-radius:26px;border:6px solid #fff;box-shadow:0 24px 70px rgba(255,77,77,.7);white-space:nowrap;opacity:0;z-index:5}
+.ans b{font-size:120px;letter-spacing:-.04em}
 </style></head><body>
 <div id="stage"><div class="glow" id="glow"></div><div class="grid"></div>
 <div class="top"><span>SKILL <b>TEXTO</b> // COPYWRITING</span><span id="clock">00:00</span></div><div class="prog"><i id="bar"></i></div>
 <section class="sc" id="s1" style="justify-content:flex-start;padding-top:20px"><div class="k"><span class="ic" style="width:44px;height:44px"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 18C7.532 18 7.02 18.395 6.707 18.707L4.707 20.707C4.396 21.018 3.955 21.163 3.521 21.089C2.572 20.928 2 19.898 2 19V5C2 3.343 3.343 2 5 2H19C20.657 2 22 3.343 22 5V15C22 16.657 20.657 18 19 18Z" fill="currentColor" fill-opacity="0.2"/><path d="M12 17H8C7.35971 17 6.64029 17.35971 6 18L4 20C3.63098 20.36902 3 19.73805 3 19V5C3 3.89543 3.89543 3 5 3H19C20.10457 3 21 3.89543 21 5V15C21 16.10457 20.10457 17 19 17H12M8 8H16M8 12H13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>seu post de vendas</div>
  <div class="h" style="font-size:132px"><span class="line"><span>Seu texto</span></span><span class="line"><span><em>não vende?</em></span></span></div>
- <div class="post" id="post"><div class="ph">📦</div><div class="pt">🔥 PROMOÇÃO!!! Compre já o MELHOR produto do mercado!!!</div>
+ <div class="post" id="post"><div class="ph">📦</div><div class="pt">🔥 PROMOÇÃO!!! Compre já o MELHOR <span class="hp" id="hp">produto</span> do mercado!!!</div>
   <div class="sales" id="sales">zero vendas 😢</div>
-  <svg class="ring" viewBox="0 0 900 400" preserveAspectRatio="none"><ellipse id="ring" cx="450" cy="200" rx="430" ry="185" pathLength="1"/></svg></div></section>
+  <div class="ans" id="ans">❌ SÓ FALA DO<br><b>PRODUTO!</b></div><svg class="ring" viewBox="0 0 900 400" preserveAspectRatio="none"><ellipse id="ring" cx="450" cy="200" rx="430" ry="185" pathLength="1"/></svg></div></section>
 <section class="sc" id="s2"><div class="k"><span class="ic" style="width:44px;height:44px"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7.393 5.053C8.468 2.51 11.402 1.319 13.946 2.394C16.49 3.469 17.681 6.402 16.606 8.946C15.531 11.49 12.598 12.681 10.054 11.606C7.51 10.531 6.319 7.597 7.393 5.053ZM18 22H6C5.448 22 5 21.552 5 21C4.997 20.064 5.185 19.137 5.551 18.275C5.901 17.443 6.41 16.687 7.05 16.05C8.367 14.734 10.138 13.996 12 14C13.862 14 15.636 14.731 16.95 16.05C17.59 16.687 18.099 17.443 18.449 18.275C18.815 19.137 19.003 20.064 19 21C19 21.552 18.552 22 18 22Z" fill="currentColor" fill-opacity="0.2"/><path d="M8 7C8 9.20914 9.79086 11 12 11C14.20914 11 16 9.20914 16 7C16 4.79086 14.20914 3 12 3C9.79086 3 8 4.79086 8 7ZM6 21C6 17.68629 8.68629 15 12 15C15.31371 15 18 17.68629 18 21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>o segredo</div>
  <div class="row" id="r1"><div class="lb">❌ Você fala:</div><div class="tx bad"><span>"Tecido 100% algodão"</span><i id="strike"></i></div></div>
  <div class="row" id="r2"><div class="lb ok">✅ O cliente ouve:</div><div class="tx good" id="good"><span id="gtyp"></span><b class="cur">|</b></div></div></section>
@@ -110,7 +116,11 @@ function cta(t,b){flash(t);show("#cta",t);inLines("#cta",t+.05);tl.from("#box",{
 tl.to("#glow",{x:120,y:-200,scale:1.15,duration:D,ease:"sine.inOut"},0);
 show("#s1",0); inLines("#s1",0); kick("#s1",0);
 tl.fromTo("#sales",{scale:1},{scale:1.12,duration:.22,yoyo:true,repeat:3,ease:"sine.inOut"},.5);
-tl.to("#ring",{strokeDashoffset:0,duration:.5,ease:"power2.out"},1.8); shake(2.45,14); flash(2.45,"#ff4d4d");
+tl.to("#ring",{strokeDashoffset:0,duration:.45,ease:"power2.out"},1.8);
+tl.to("#hp",{"--s":1,color:"#fff",duration:.3,ease:"power2.out"},1.95);
+tl.set("#ans",{opacity:1},2.2);tl.fromTo("#ans",{scale:3.2,rotation:-25},{scale:1,rotation:-6,duration:.35,ease:"back.out(2)"},2.2);
+shake(2.4,18); flash(2.4,"#ff4d4d");
+tl.to("#ans",{scale:1.08,duration:.15,yoyo:true,repeat:1,ease:"sine.inOut"},2.6);
 hide("#s1",2.85);
 flash(2.98); show("#s2",2.98); kick("#s2",2.98);
 tl.from("#r1",{x:-120,opacity:0,duration:.35,ease:E},3.05);
