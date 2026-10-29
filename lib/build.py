@@ -19,11 +19,11 @@ html=f'''<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><style>{f
 <script src="../reel3/node_modules/gsap/dist/gsap.min.js"></script><script src="words.js"></script>
 <script>
 const D={cfg["D"]}; window.END={cfg["END"]}; const tl=gsap.timeline({{paused:true}}), E="expo.out";
-function inLines(sel,t){{tl.from(sel+" .line>span",{{yPercent:110,duration:.6,ease:E,stagger:.08}},t)}}
+function inLines(sel,t){{if(t<.2)return;tl.from(sel+" .line>span",{{yPercent:110,duration:.6,ease:E,stagger:.08}},t)}}
 function show(id,t){{tl.set(id,{{opacity:1}},t)}}
 function hide(id,t){{tl.to(id,{{opacity:0,y:-60,duration:.3,ease:"power2.in"}},t)}}
 function flash(t,c){{tl.set("#flash",{{background:c||"#ff6a1a"}},t);tl.fromTo("#flash",{{opacity:0}},{{opacity:.5,duration:.06,yoyo:true,repeat:1,ease:"none"}},t)}}
-function kick(id,t){{tl.from(id+" .k",{{opacity:0,x:-40,duration:.4,ease:E}},t)}}
+function kick(id,t){{if(t<.2)return;tl.from(id+" .k",{{opacity:0,x:-40,duration:.4,ease:E}},t)}}
 function shake(t,a){{tl.fromTo("#stage",{{x:0}},{{x:a||10,duration:.04,yoyo:true,repeat:5,ease:"none"}},t)}}
 function steps(t,a,b,c){{tl.from("#free",{{scale:0,opacity:0,duration:.35,ease:"back.out(2)"}},t+.1);tl.from("#st1",{{x:-90,opacity:0,duration:.3,ease:E}},a);tl.from("#st2",{{x:-90,opacity:0,duration:.3,ease:E}},b);tl.from("#st3",{{x:-90,opacity:0,scale:.9,duration:.35,ease:"back.out(2)"}},c);shake(c+.05)}}
 function cta(t,b){{flash(t);show("#cta",t);inLines("#cta",t+.05);tl.from("#box",{{scale:0,rotation:-8,duration:.55,ease:"back.out(1.8)"}},b);tl.to("#box",{{scale:1.06,duration:.4,yoyo:true,repeat:3,ease:"sine.inOut"}},b+.6);tl.from("#cm",{{y:120,opacity:0,duration:.6,ease:E}},b+.9)}}
