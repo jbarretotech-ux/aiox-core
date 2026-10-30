@@ -1,8 +1,38 @@
 {
+"projeto": {
+"k": "PROJETO",
+"t": "Ela não conhece o seu negócio.",
+"lead": "Eu também ficava bravo. Aí contei uma vez quem eu sou, o que vendo e como eu falo.",
+"steps": [
+[
+"Abra \"Projetos\"",
+"No menu do lado esquerdo do Claude."
+],
+[
+"Crie um projeto",
+"Com o nome do seu negócio."
+],
+[
+"Conte quem você é",
+"O que vende, pra quem e como fala."
+],
+[
+"Suba seus arquivos",
+"Preços e os posts que mais venderam."
+]
+],
+"prompt": "Quem sou: [SEU NOME], dono de [NEGÓCIO]. O que vendo: [PRODUTOS] de [FAIXA DE PREÇO]. Meu cliente: [QUEM COMPRA] e o que ele quer. Meu jeito: simples e direto. Se faltar informação, me pergunte.",
+"note": "Troca o que está entre [ ] e salva.",
+"tip": [
+"Suba seus melhores posts e peça:",
+"\"Escreve igual a esses, que foram os que mais venderam.\"",
+"Ela copia o que já funciona, com o seu jeito de falar."
+]
+},
 "artefato": {
 "k": "ARTEFATO",
-"t": "O Claude cria app de verdade na conversa.",
-"lead": "Calculadora, checklist, cardápio, quiz. Ele monta e você já usa ali mesmo.",
+"t": "Criei uma calculadora de orçamento sem saber programar.",
+"lead": "Pedi em português. Em 1 minuto tava pronta, com os meus preços.",
 "steps": [
 [
 "Abra o Claude",
@@ -31,8 +61,8 @@
 },
 "pesquisa": {
 "k": "PESQUISA",
-"t": "O Claude pesquisa na internet por você.",
-"lead": "Ele lê vários sites, junta tudo e te entrega um resumo com os links das fontes.",
+"t": "Antes de decidir, eu peço uma pesquisa.",
+"lead": "Ela lê vários sites, junta tudo e me mostra de onde tirou cada informação.",
 "steps": [
 [
 "Ligue a busca na web",
@@ -61,8 +91,8 @@
 },
 "estilo": {
 "k": "ESTILO",
-"t": "O Claude tem estilos de resposta.",
-"lead": "Você ensina o seu jeito de falar uma vez e escolhe ele quando quiser.",
+"t": "Ensinei a IA a falar do meu jeito.",
+"lead": "Mandei um texto meu e contei como eu falo. Agora ela escreve igual eu falaria no balcão.",
 "steps": [
 [
 "Abra os estilos",
@@ -91,8 +121,8 @@
 },
 "memoria": {
 "k": "MEMORIA",
-"t": "Ele tem memória entre as conversas.",
-"lead": "Seu nome, seu negócio, seu jeito. Ele guarda o que importa e usa depois.",
+"t": "Liguei a memória e ela parou de esquecer.",
+"lead": "Contei uma vez quem eu sou e o que vendo. Agora ela lembra em toda conversa.",
 "steps": [
 [
 "Abra as configurações",
@@ -121,8 +151,8 @@
 },
 "resumo": {
 "k": "RESUMO",
-"t": "Cole qualquer texto e peça o resumo.",
-"lead": "Reunião, grupo de WhatsApp, contrato, aula. Ele tira só o que importa.",
+"t": "Eu colo a conversa e peço o resumo.",
+"lead": "Grupo do WhatsApp, reunião, contrato. Em segundos tenho o que importa e quem faz o quê.",
 "steps": [
 [
 "Copie o texto",
@@ -151,8 +181,8 @@
 },
 "foto": {
 "k": "FOTO",
-"t": "O Claude enxerga imagens.",
-"lead": "Print, nota fiscal, cardápio, gráfico, quadro branco. Ele lê e trabalha em cima.",
+"t": "Eu tiro foto da nota e pronto.",
+"lead": "A IA lê a foto e transforma em tabela. Nota, cardápio, lista de preço, print.",
 "steps": [
 [
 "Tire a foto",
@@ -181,8 +211,8 @@
 },
 "email": {
 "k": "EMAIL",
-"t": "Cobrar, dizer não, pedir desculpa. Sem travar.",
-"lead": "Você conta a situação e o Claude escreve com o tom certo.",
+"t": "A IA escreve a mensagem difícil comigo.",
+"lead": "Cobrar, dizer não, pedir desculpa. Conto a situação e ela acha o tom certo, sem briga.",
 "steps": [
 [
 "Conte a situação",
@@ -211,8 +241,8 @@
 },
 "critica": {
 "k": "CRITICA",
-"t": "Peça pro Claude ser o crítico mais chato do mundo.",
-"lead": "Ele acha os erros do seu texto, plano ou ideia antes do cliente achar.",
+"t": "Pedi pra IA ser meu cliente mais chato.",
+"lead": "Colei minha proposta e pedi: não me elogie, me diga por que você não compraria.",
 "steps": [
 [
 "Cole seu trabalho",
@@ -241,8 +271,8 @@
 },
 "aprender": {
 "k": "APRENDER",
-"t": "O Claude ensina qualquer assunto do seu jeito.",
-"lead": "Explica fácil, dá exemplo do seu dia a dia e faz prova pra ver se você entendeu.",
+"t": "Uso a IA como professor particular.",
+"lead": "Peço pra explicar como se eu tivesse 7 anos, com exemplo do meu negócio.",
 "steps": [
 [
 "Diga o assunto",
@@ -271,8 +301,8 @@
 },
 "conteudo": {
 "k": "CONTEUDO",
-"t": "Nunca mais fique sem ideia do que postar.",
-"lead": "O Claude monta o mês inteiro: tema, formato e gancho de cada dia.",
+"t": "Eu planejo o mês inteiro em 1 pedido.",
+"lead": "Digo o que vendo e pra quem. A IA monta o que postar em cada dia, com a primeira frase pronta.",
 "steps": [
 [
 "Diga seu tema",
@@ -301,8 +331,8 @@
 },
 "cliente": {
 "k": "CLIENTE",
-"t": "O Claude vira o seu cliente mais difícil.",
-"lead": "Ele faz as objeções de verdade e você treina a resposta antes da reunião.",
+"t": "Eu treino a venda antes de atender.",
+"lead": "A IA vira o cliente difícil. Ela faz as objeções e eu treino a resposta.",
 "steps": [
 [
 "Descreva o cliente",
@@ -331,8 +361,8 @@
 },
 "conecta": {
 "k": "CONECTA",
-"t": "O Claude pode ler seu e-mail e sua agenda.",
-"lead": "Com os conectores, ele busca a informação sozinho. Sem você copiar e colar.",
+"t": "Liguei a IA no meu e-mail e agenda.",
+"lead": "Pergunto \"o que eu tenho hoje?\" e ela olha tudo por mim. Eu escolho o que ela pode ver.",
 "steps": [
 [
 "Abra as configurações",
@@ -361,8 +391,8 @@
 },
 "atalho": {
 "k": "ATALHO",
-"t": "Editar a pergunta é melhor que corrigir.",
-"lead": "Quando você corrige, a resposta errada fica na conversa e atrapalha o resto.",
+"t": "O erro não era dela. Era o meu pedido.",
+"lead": "Em vez de brigar com ela, eu edito a minha mensagem e mando melhor.",
 "steps": [
 [
 "Ache sua mensagem",
@@ -391,8 +421,8 @@
 },
 "concorrente": {
 "k": "CONCORRENTE",
-"t": "O Claude analisa o seu concorrente em minutos.",
-"lead": "Ele lê o site, compara com o seu e mostra onde você pode ganhar.",
+"t": "Pedi pra IA comparar nós dois.",
+"lead": "Ela leu o site dele, o meu e as avaliações públicas. Me mostrou onde eu perdia cliente.",
 "steps": [
 [
 "Ligue a busca na web",
@@ -421,8 +451,8 @@
 },
 "preco": {
 "k": "PRECO",
-"t": "O Claude faz a conta do seu preço com você.",
-"lead": "Custo, tempo, lucro e imposto. Ele monta a conta e mostra o valor mínimo.",
+"t": "Fiz a conta do meu preço com a IA.",
+"lead": "Listei custo, tempo e quanto quero ganhar. Ela mostrou o preço mínimo e o ideal.",
 "steps": [
 [
 "Liste seus custos",
