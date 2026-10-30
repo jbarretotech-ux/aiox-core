@@ -1,0 +1,452 @@
+{
+"artefato": {
+"k": "ARTEFATO",
+"t": "O Claude cria app de verdade na conversa.",
+"lead": "Calculadora, checklist, cardápio, quiz. Ele monta e você já usa ali mesmo.",
+"steps": [
+[
+"Abra o Claude",
+"No site ou no app."
+],
+[
+"Peça o app",
+"\"Cria uma calculadora de orçamento...\""
+],
+[
+"Teste na hora",
+"Ele aparece do lado da conversa."
+],
+[
+"Peça ajustes",
+"\"Muda a cor\", \"põe mais um campo\"."
+]
+],
+"prompt": "Crie um app simples de [O QUE VOCÊ PRECISA]. Para [QUEM VAI USAR]. Com [CAMPOS OU BOTÕES QUE PRECISA]. Visual limpo, bonito e fácil de usar no celular.",
+"note": "Troca o que está entre [ ] e manda.",
+"tip": [
+"Depois de pronto, peça:",
+"\"Publica pra eu mandar o link pro meu cliente.\"",
+"Você ganha um link pra compartilhar com quem quiser."
+]
+},
+"pesquisa": {
+"k": "PESQUISA",
+"t": "O Claude pesquisa na internet por você.",
+"lead": "Ele lê vários sites, junta tudo e te entrega um resumo com os links das fontes.",
+"steps": [
+[
+"Ligue a busca na web",
+"No botão de ferramentas da conversa."
+],
+[
+"Faça a pergunta",
+"Bem específica, com cidade e data."
+],
+[
+"Peça as fontes",
+"\"Mostra os links de onde tirou.\""
+],
+[
+"Peça um resumo",
+"\"Me dá em 5 tópicos.\""
+]
+],
+"prompt": "Pesquise [O QUE VOCÊ QUER SABER] em [CIDADE OU PAÍS]. Compare pelo menos 5 fontes diferentes. Entregue um resumo em 5 tópicos. No final a lista de links das fontes.",
+"note": "Troca o que está entre [ ] e manda.",
+"tip": [
+"Termine a pesquisa com:",
+"\"O que ainda não tem certeza? Me diga o que eu devo conferir.\"",
+"Ele mostra onde as fontes discordam. Assim você não cai em erro."
+]
+},
+"estilo": {
+"k": "ESTILO",
+"t": "O Claude tem estilos de resposta.",
+"lead": "Você ensina o seu jeito de falar uma vez e escolhe ele quando quiser.",
+"steps": [
+[
+"Abra os estilos",
+"No botão de ferramentas da conversa."
+],
+[
+"Crie um estilo novo",
+"Opção de criar ou personalizar."
+],
+[
+"Mande um texto seu",
+"Ou descreva como você fala."
+],
+[
+"Dê um nome",
+"Ex.: \"Meu jeito\" e pronto."
+]
+],
+"prompt": "Fale como [VOCÊ FALA: SIMPLES, ANIMADO...]. Use frases curtas, no máximo 2 linhas. Nunca use [PALAVRAS QUE VOCÊ ODEIA]. Sempre termine com uma pergunta ou chamada.",
+"note": "Troca o que está entre [ ] e salva.",
+"tip": [
+"Crie 2 estilos diferentes:",
+"\"Cliente\" (educado e claro) e \"Redes\" (animado e curto).",
+"Troca com um clique conforme o que você vai escrever."
+]
+},
+"memoria": {
+"k": "MEMORIA",
+"t": "Ele tem memória entre as conversas.",
+"lead": "Seu nome, seu negócio, seu jeito. Ele guarda o que importa e usa depois.",
+"steps": [
+[
+"Abra as configurações",
+"No seu perfil do Claude."
+],
+[
+"Procure \"Memória\"",
+"Na parte de recursos."
+],
+[
+"Ligue a memória",
+"Ela vem desligada em algumas contas."
+],
+[
+"Conte quem você é",
+"\"Lembra que eu tenho uma loja de...\""
+]
+],
+"prompt": "Lembra que eu me chamo [NOME] e trabalho com [O QUE FAZ]. Meu cliente é [QUEM COMPRA]. Eu gosto de respostas [CURTAS, EM LISTA...]. Nunca [O QUE VOCÊ NÃO QUER].",
+"note": "Troca o que está entre [ ] e manda.",
+"tip": [
+"De vez em quando pergunte:",
+"\"O que você lembra sobre mim?\"",
+"Você vê o que ele guardou e corrige o que estiver errado."
+]
+},
+"resumo": {
+"k": "RESUMO",
+"t": "Cole qualquer texto e peça o resumo.",
+"lead": "Reunião, grupo de WhatsApp, contrato, aula. Ele tira só o que importa.",
+"steps": [
+[
+"Copie o texto",
+"Da reunião, do grupo ou do documento."
+],
+[
+"Cole no Claude",
+"Pode ser bem grande."
+],
+[
+"Peça o formato",
+"\"Em 5 tópicos\" ou \"em 1 parágrafo\"."
+],
+[
+"Peça as tarefas",
+"\"O que eu preciso fazer?\""
+]
+],
+"prompt": "Resuma o texto abaixo em 5 tópicos curtos. Depois liste o que eu preciso fazer e até quando. Destaque qualquer risco ou problema. Texto: [COLE AQUI]",
+"note": "Cola o texto no lugar de [COLE AQUI].",
+"tip": [
+"Depois do resumo, peça:",
+"\"Escreve a mensagem pra mandar pro grupo com essas tarefas.\"",
+"Ele já deixa o recado pronto pra você só copiar e enviar."
+]
+},
+"foto": {
+"k": "FOTO",
+"t": "O Claude enxerga imagens.",
+"lead": "Print, nota fiscal, cardápio, gráfico, quadro branco. Ele lê e trabalha em cima.",
+"steps": [
+[
+"Tire a foto",
+"Ou faça um print da tela."
+],
+[
+"Anexe no Claude",
+"No clipe ou no botão de +."
+],
+[
+"Diga o que quer",
+"\"Transforma em tabela.\""
+],
+[
+"Revise os números",
+"Confira os valores importantes."
+]
+],
+"prompt": "Leia a imagem que eu mandei. Transforme em [TABELA, LISTA, TEXTO]. Some os valores se tiver números. Me avise se alguma parte estiver ilegível.",
+"note": "Troca o que está entre [ ] e manda.",
+"tip": [
+"Tire foto de um site que você gosta e peça:",
+"\"Me explica por que esse layout funciona e como eu faço um parecido.\"",
+"Vira uma aula de design com o seu exemplo favorito."
+]
+},
+"email": {
+"k": "EMAIL",
+"t": "Cobrar, dizer não, pedir desculpa. Sem travar.",
+"lead": "Você conta a situação e o Claude escreve com o tom certo.",
+"steps": [
+[
+"Conte a situação",
+"Quem é a pessoa e o que aconteceu."
+],
+[
+"Diga o objetivo",
+"\"Quero receber\" ou \"quero recusar\"."
+],
+[
+"Escolha o tom",
+"Educado, firme, amigável."
+],
+[
+"Peça 3 versões",
+"E escolha a melhor."
+]
+],
+"prompt": "Escreva um e-mail para [QUEM É A PESSOA]. Situação: [O QUE ACONTECEU]. Objetivo: [O QUE VOCÊ QUER QUE ELA FAÇA]. Tom: educado e firme. Faça 3 versões.",
+"note": "Troca o que está entre [ ] e manda.",
+"tip": [
+"Antes de enviar, pergunte:",
+"\"Como a pessoa vai se sentir lendo isso? O que pode soar mal?\"",
+"Ele avisa se alguma frase pode criar problema."
+]
+},
+"critica": {
+"k": "CRITICA",
+"t": "Peça pro Claude ser o crítico mais chato do mundo.",
+"lead": "Ele acha os erros do seu texto, plano ou ideia antes do cliente achar.",
+"steps": [
+[
+"Cole seu trabalho",
+"Texto, proposta, plano, ideia."
+],
+[
+"Dê o papel de crítico",
+"\"Seja duro, não me elogie.\""
+],
+[
+"Peça os 3 piores erros",
+"E por que são erros."
+],
+[
+"Peça a versão melhor",
+"\"Agora corrige pra mim.\""
+]
+],
+"prompt": "Você é um crítico exigente e honesto. Analise o [TEXTO/PLANO/PROPOSTA] abaixo. Aponte os 3 maiores problemas, sem elogios. Depois me mostre como resolver cada um.",
+"note": "Cole seu trabalho embaixo e manda.",
+"tip": [
+"Peça pra ele ser seu cliente:",
+"\"Você é meu cliente mais exigente. Por que você NÃO compraria?\"",
+"Você descobre as objeções antes da reunião."
+]
+},
+"aprender": {
+"k": "APRENDER",
+"t": "O Claude ensina qualquer assunto do seu jeito.",
+"lead": "Explica fácil, dá exemplo do seu dia a dia e faz prova pra ver se você entendeu.",
+"steps": [
+[
+"Diga o assunto",
+"\"Quero aprender sobre...\""
+],
+[
+"Peça explicação simples",
+"\"Como se eu tivesse 7 anos.\""
+],
+[
+"Peça exemplos",
+"Do seu trabalho ou da sua vida."
+],
+[
+"Peça uma prova",
+"5 perguntas pra testar você."
+]
+],
+"prompt": "Me ensine sobre [ASSUNTO] como se eu tivesse 7 anos. Use exemplos de [SEU TRABALHO OU DIA A DIA]. Vá um passo de cada vez e espere eu responder. No final me faça 5 perguntas pra testar.",
+"note": "Troca o que está entre [ ] e manda.",
+"tip": [
+"Quando entender, peça:",
+"\"Agora eu explico pra você. Me corrija onde eu errar.\"",
+"Explicar é o jeito mais rápido de aprender de verdade."
+]
+},
+"conteudo": {
+"k": "CONTEUDO",
+"t": "Nunca mais fique sem ideia do que postar.",
+"lead": "O Claude monta o mês inteiro: tema, formato e gancho de cada dia.",
+"steps": [
+[
+"Diga seu tema",
+"E quem é o seu público."
+],
+[
+"Diga o objetivo",
+"Vender, engajar ou ganhar seguidor."
+],
+[
+"Peça a tabela",
+"Dia, tema, formato e gancho."
+],
+[
+"Peça o primeiro roteiro",
+"E já começa hoje."
+]
+],
+"prompt": "Meu perfil fala de [TEMA] para [PÚBLICO]. Objetivo: [VENDER/ENGAJAR/CRESCER]. Crie 30 ideias de posts, uma por dia. Formato: tabela com dia, ideia, formato e gancho.",
+"note": "Troca o que está entre [ ] e manda.",
+"tip": [
+"Antes de pedir as ideias, mande:",
+"\"Esses foram meus 3 posts que mais deram certo: [LINKS OU TEXTOS].\"",
+"Ele cria o mês em cima do que já funcionou com o seu público."
+]
+},
+"cliente": {
+"k": "CLIENTE",
+"t": "O Claude vira o seu cliente mais difícil.",
+"lead": "Ele faz as objeções de verdade e você treina a resposta antes da reunião.",
+"steps": [
+[
+"Descreva o cliente",
+"Quem é e o que ele quer."
+],
+[
+"Diga o que você vende",
+"E o preço."
+],
+[
+"Peça as objeções",
+"Ele faz uma por vez."
+],
+[
+"Peça a nota",
+"\"O que eu respondi mal?\""
+]
+],
+"prompt": "Você é [TIPO DE CLIENTE] desconfiado. Eu vendo [PRODUTO OU SERVIÇO] por [PREÇO]. Faça uma objeção por vez e espere eu responder. No final me dê nota de 0 a 10 e diga o que melhorar.",
+"note": "Troca o que está entre [ ] e manda.",
+"tip": [
+"Depois do treino, peça:",
+"\"Monta uma lista com as 5 objeções e a melhor resposta pra cada.\"",
+"Vira a sua colinha de vendas pra usar sempre."
+]
+},
+"conecta": {
+"k": "CONECTA",
+"t": "O Claude pode ler seu e-mail e sua agenda.",
+"lead": "Com os conectores, ele busca a informação sozinho. Sem você copiar e colar.",
+"steps": [
+[
+"Abra as configurações",
+"No seu perfil do Claude."
+],
+[
+"Vá em Conectores",
+"Lá estão os apps disponíveis."
+],
+[
+"Escolha o app",
+"Gmail, Agenda, Drive e outros."
+],
+[
+"Autorize o acesso",
+"Você escolhe o que ele pode ver."
+]
+],
+"prompt": "Agenda: \"O que eu tenho essa semana? Tem conflito?\" E-mail: \"Quais e-mails importantes eu não respondi?\" Drive: \"Acha a proposta do cliente [NOME].\" Resumo: \"Me dá o resumo do meu dia.\"",
+"note": "Os conectores variam conforme o seu plano.",
+"tip": [
+"Toda segunda de manhã, pergunte:",
+"\"Olha minha agenda e meus e-mails e me diz as 3 prioridades da semana.\"",
+"Você começa a semana sabendo exatamente o que fazer."
+]
+},
+"atalho": {
+"k": "ATALHO",
+"t": "Editar a pergunta é melhor que corrigir.",
+"lead": "Quando você corrige, a resposta errada fica na conversa e atrapalha o resto.",
+"steps": [
+[
+"Ache sua mensagem",
+"A que gerou a resposta ruim."
+],
+[
+"Toque em editar",
+"O ícone de lápis."
+],
+[
+"Melhore o pedido",
+"Mais claro e com mais detalhe."
+],
+[
+"Envie de novo",
+"A resposta errada some do caminho."
+]
+],
+"prompt": "Contexto: [O QUE ELE NÃO SABIA]. O que evitar: \"Não quero [O QUE VEIO ERRADO].\" Exemplo: \"Quero algo parecido com [EXEMPLO].\" Formato: [TAMANHO E JEITO DA RESPOSTA].",
+"note": "Um pedido melhor vale mais que 5 correções.",
+"tip": [
+"Conversa ficou longa e confusa?",
+"\"Resume tudo o que decidimos aqui em 5 tópicos.\"",
+"Abre uma conversa nova, cola o resumo e continua com tudo limpo."
+]
+},
+"concorrente": {
+"k": "CONCORRENTE",
+"t": "O Claude analisa o seu concorrente em minutos.",
+"lead": "Ele lê o site, compara com o seu e mostra onde você pode ganhar.",
+"steps": [
+[
+"Ligue a busca na web",
+"No botão de ferramentas."
+],
+[
+"Mande os sites",
+"O seu e o do concorrente."
+],
+[
+"Peça a comparação",
+"Preço, oferta, texto e visual."
+],
+[
+"Peça o plano",
+"\"O que eu faço pra ganhar?\""
+]
+],
+"prompt": "Compare o meu site [SEU SITE] com [SITE DO CONCORRENTE]. Analise oferta, preço, textos e o que o cliente vê primeiro. Mostre 3 coisas que ele faz melhor que eu. Me dê 3 ações pra eu fazer essa semana.",
+"note": "Troca o que está entre [ ] e manda.",
+"tip": [
+"Peça também:",
+"\"Leia as avaliações públicas dele e me diga do que os clientes reclamam.\"",
+"A reclamação do cliente dele é a sua oportunidade."
+]
+},
+"preco": {
+"k": "PRECO",
+"t": "O Claude faz a conta do seu preço com você.",
+"lead": "Custo, tempo, lucro e imposto. Ele monta a conta e mostra o valor mínimo.",
+"steps": [
+[
+"Liste seus custos",
+"Material, ferramentas, contas do mês."
+],
+[
+"Diga seu tempo",
+"Quantas horas leva cada trabalho."
+],
+[
+"Diga quanto quer ganhar",
+"Por mês."
+],
+[
+"Peça a conta",
+"Preço mínimo e preço ideal."
+]
+],
+"prompt": "Eu faço [SEU SERVIÇO OU PRODUTO]. Meus custos: [LISTA DE CUSTOS DO MÊS]. Cada trabalho leva [HORAS] e eu quero ganhar [VALOR] por mês. Calcule o preço mínimo e o ideal. Mostre a conta.",
+"note": "Troca o que está entre [ ] e manda.",
+"tip": [
+"Depois da conta, peça:",
+"\"Cria 3 pacotes: básico, completo e premium, com o que vai em cada um.\"",
+"Cliente escolhe o do meio. E você vende mais."
+]
+}
+}
