@@ -1,0 +1,213 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700;800;900&family=JetBrains+Mono:wght@500;800&display=swap">
+<style>
+:root{--or:#ff6a1a;--red:#ff4d4d;--bg:#0a0908;--ink:#f5f1ea;--mut:#8a8178;--gr:#4ade80}
+*{box-sizing:border-box}body{margin:0;background:var(--bg)}
+#v{position:relative;width:1080px;height:1920px;overflow:hidden;color:var(--ink);font-family:Inter,sans-serif;background-color:var(--bg);
+background-image:linear-gradient(#1c1916 2px,transparent 2px),linear-gradient(90deg,#1c1916 2px,transparent 2px);background-size:90px 90px}
+.glow{position:absolute;width:900px;height:900px;border-radius:50%;background:radial-gradient(circle,rgba(255,106,26,.22),transparent 65%);left:90px;top:300px}
+.top{position:absolute;top:70px;left:70px;right:70px;display:flex;justify-content:space-between;font:800 30px 'JetBrains Mono',monospace;color:var(--mut);z-index:5}
+.sc{position:absolute;inset:0;opacity:0;transform-origin:50% 45%}
+.h{font-weight:900;letter-spacing:-.045em;line-height:1}
+.w{display:inline-block}
+.m{font-family:'JetBrains Mono',monospace;font-weight:800}
+.card{background:#141210;border:3px solid #2a2622;border-radius:36px}
+.stamp{position:absolute;background:var(--red);color:#fff;font-weight:900;font-size:104px;letter-spacing:-.03em;padding:18px 48px;border:10px solid #fff;border-radius:30px;white-space:nowrap}
+.cap{position:absolute;left:70px;right:70px;bottom:150px;text-align:center;font-weight:900;font-size:58px;line-height:1.2;letter-spacing:-.02em;z-index:6}
+.cap span{color:#4a443e}.cap span.on{color:#fff}.cap span.k{color:var(--or)}
+.flap{display:inline-block;width:118px;height:170px;margin:0 6px;background:#1c1916;border-radius:18px;position:relative;overflow:hidden;font:900 140px/170px Inter;text-align:center;color:var(--ink)}
+.flap:after{content:'';position:absolute;left:0;right:0;top:84px;height:3px;background:#0a0908}
+.num{font:900 260px/1 Inter;letter-spacing:-.06em;color:var(--or)}
+.chip{display:inline-block;background:#141210;border:3px solid var(--or);color:var(--or);border-radius:999px;padding:16px 36px;font-weight:900;font-size:46px;margin:10px}
+.bub{position:absolute;right:70px;left:170px;top:560px;background:var(--or);color:#0a0908;border-radius:40px 40px 8px 40px;padding:40px 46px;font-weight:800;font-size:52px;line-height:1.25;min-height:150px}
+.hk{position:absolute;left:70px;right:130px;background:#141210;border:3px solid #2a2622;border-radius:30px 30px 30px 8px;padding:28px 36px;font-weight:800;font-size:42px}
+.box{display:inline-block;position:relative;overflow:hidden;background:var(--or);color:#0a0908;font-weight:900;font-size:200px;letter-spacing:-.06em;line-height:1;padding:16px 64px 44px;border-radius:44px}
+.mq{position:absolute;left:0;white-space:nowrap;font:900 110px/1 Inter;letter-spacing:-.05em;color:transparent;-webkit-text-stroke:3px #2a2622}
+.cm{position:absolute;left:120px;right:120px;top:1290px;display:flex;gap:26px;align-items:center;background:#fff;color:#111;border-radius:36px;padding:28px 36px}
+.cm .a{width:90px;height:90px;border-radius:50%;background:linear-gradient(135deg,#f58529,#dd2a7b,#8134af);flex:none}
+.slice{position:relative;display:inline-block}
+.slice span{display:block;overflow:hidden;height:.5em}
+.slice span i{display:block;font-style:normal}
+.slice span:last-child i{margin-top:-.5em}
+.phone{position:absolute;left:290px;top:520px;width:500px;height:860px;border-radius:60px;border:10px solid #2a2622;background:#141210;overflow:hidden}
+</style></head><body><div id="v">
+<div class="glow" id="glow"></div>
+<div class="top"><span>@jotabe.ia</span><span id="chap" style="color:var(--or)"></span></div>
+
+<section class="sc" id="s1">
+ <div class="h" style="position:absolute;left:80px;right:80px;top:380px;font-size:112px">
+  <span class="w" id="a1">Seu</span> <span class="w" id="a2">Instagram</span><br><span class="w" id="a3">tá</span>
+  <span class="w" id="a4" style="color:var(--or);font-size:150px">PARADO?</span></div>
+ <div style="position:absolute;left:80px;top:860px" id="fl"><div class="m" style="font-size:30px;color:var(--mut);margin-bottom:14px">SEGUIDORES</div>
+  <span class="flap" id="f1">1</span><span class="flap" id="f2">2</span></div>
+ <div class="stamp" id="st1" style="left:150px;top:1180px">TEM CONSERTO.</div>
+</section>
+
+<section class="sc" id="s2">
+ <div class="h" style="position:absolute;left:80px;right:80px;top:330px;font-size:92px">Eu usei uma IA que<br><span style="color:var(--or)">estudou</span></div>
+ <div style="position:absolute;left:0;right:0;top:640px;text-align:center" id="board"></div>
+ <div class="h" style="position:absolute;left:0;right:0;top:880px;text-align:center;font-size:96px" id="pf">perfis.</div>
+ <svg width="900" height="330" viewBox="0 0 900 330" style="position:absolute;left:90px;top:580px"><ellipse cx="450" cy="165" rx="430" ry="150" fill="none" stroke="#ff6a1a" stroke-width="8" stroke-dasharray="2000" id="el"/></svg>
+ <div style="position:absolute;left:0;right:0;top:1100px;text-align:center" id="q2"><span class="chip">o que faz um vídeo crescer?</span></div>
+</section>
+
+<section class="sc" id="s3">
+ <div class="h" style="position:absolute;left:80px;right:80px;top:360px;font-size:96px" id="t3">3 coisas fazem<br>um vídeo</div>
+ <div class="h slice" id="slc" style="position:absolute;left:70px;top:620px;font-size:188px;color:var(--or)"><span><i>CRESCER</i></span><span><i>CRESCER</i></span></div>
+ <div style="position:absolute;left:80px;top:1000px;display:flex;gap:30px" id="dots3"></div>
+</section>
+
+<section class="sc" id="s4">
+ <div class="m" style="position:absolute;left:80px;top:300px;font-size:200px;color:#2a2622" id="n4">01</div>
+ <div class="h" style="position:absolute;left:80px;top:520px;font-size:104px">A 1ª frase<br><span style="color:var(--or)">em 3 segundos</span></div>
+ <svg width="420" height="420" viewBox="0 0 100 100" style="position:absolute;left:330px;top:820px">
+  <circle cx="50" cy="50" r="42" fill="none" stroke="#2a2622" stroke-width="7"/>
+  <circle cx="50" cy="50" r="42" fill="none" stroke="#ff6a1a" stroke-width="7" stroke-dasharray="264" stroke-linecap="round" transform="rotate(-90 50 50)" id="tm"/>
+  <text x="50" y="62" text-anchor="middle" font-family="Inter" font-weight="900" font-size="34" fill="#f5f1ea" id="tmt">3</text></svg>
+ <div class="h" id="sk" style="position:absolute;left:0;right:0;top:1290px;text-align:center;font-size:60px;color:#b5aca2">senão a pessoa <span style="color:var(--red)">passa direto</span></div>
+</section>
+
+<section class="sc" id="s5">
+ <div class="m" style="position:absolute;left:80px;top:300px;font-size:200px;color:#2a2622">02</div>
+ <div class="h" style="position:absolute;left:80px;top:520px;font-size:104px">Legenda<br><span style="color:var(--or)">na tela</span></div>
+ <div style="position:absolute;left:80px;top:830px" id="tk"><span class="num" id="mult">0,0×</span><div class="h" style="font-size:70px;color:#b5aca2;margin-top:10px">mais views</div></div>
+ <div class="card" id="mini" style="position:absolute;left:80px;right:80px;top:1270px;height:140px;padding:24px;display:flex;align-items:center;justify-content:center">
+  <div style="font-weight:900;font-size:50px;text-align:center;white-space:nowrap" id="mcap"></div></div>
+</section>
+
+<section class="sc" id="s6">
+ <div class="m" style="position:absolute;left:80px;top:300px;font-size:200px;color:#2a2622">03</div>
+ <div class="h" style="position:absolute;left:80px;top:520px;font-size:96px">Post que dá<br><span style="color:var(--or)">vontade de mandar</span></div>
+ <div style="position:absolute;left:80px;top:860px;width:940px;font-size:70px;white-space:nowrap" id="hearts"></div>
+ <div id="plane" style="position:absolute;left:0;top:0;font-size:120px">✈️</div>
+ <div class="h" id="r8" style="position:absolute;left:80px;top:1270px;font-size:60px;color:#b5aca2">1 envio a cada <span style="color:var(--or)">8 curtidas</span></div>
+</section>
+
+<section class="sc" id="s7">
+ <div class="h" style="position:absolute;left:80px;right:80px;top:300px;font-size:92px">E a IA escreve<br><span style="color:var(--or)">as frases por você:</span></div>
+ <div class="bub" id="bub"><span id="typed"></span><span id="cur">|</span></div>
+ <div class="hk" id="h1" style="top:870px">"Vende muito e não sobra dinheiro?"</div>
+ <div class="hk" id="h2" style="top:1060px">"Cliente falou tá caro e você travou?"</div>
+ <div class="hk" id="h3" style="top:1250px">"Seu site não traz cliente?"</div>
+</section>
+
+<section class="sc" id="s8">
+ <div class="mq" id="mq1" style="top:270px">COFRE • COFRE • COFRE • COFRE • COFRE • COFRE •</div>
+ <div class="mq" id="mq2" style="top:1560px">COFRE • COFRE • COFRE • COFRE • COFRE • COFRE •</div>
+ <div class="h" style="position:absolute;left:80px;right:80px;top:430px;font-size:88px" id="q8">Quer os prompts<br>prontos?</div>
+ <div style="position:absolute;left:80px;top:690px"><div class="h" style="font-size:90px;margin-bottom:26px" id="cm8">Comenta</div><div class="box" id="box">COFRE</div></div>
+ <div class="h" id="dm" style="position:absolute;left:80px;right:80px;top:1110px;font-size:62px;color:#b5aca2;line-height:1.2">que eu te mando no direct.<br>É de graça.</div>
+ <div class="cm" id="cmt"><div class="a"></div><div><div style="font-size:30px;color:#777;font-weight:700">você · agora</div><div style="font-size:54px;font-weight:900">COFRE 🔐</div></div></div>
+</section>
+<div class="cap" id="cap"></div>
+</div>
+<script>
+const D=24;
+const LINES=[[0,'Seu Instagram tá parado nos mesmos seguidores?'],[2.5,'Tem conserto.'],[3.6,'Eu usei uma IA que estudou 531 mil perfis.'],
+[6.8,'Três coisas fazem um vídeo crescer.'],[9.0,'Um: a primeira frase, em 3 segundos.'],[11.6,'Dois: legenda na tela. 4,6 vezes mais views.'],
+[14.6,'Três: um post que dá vontade de mandar.'],[17.4,'E a IA escreve as frases por você.'],[20.6,'Comenta COFRE que eu te mando os prompts no direct!']];
+const ENDS=LINES.map((l,i)=>i<LINES.length-1?LINES[i+1][0]-0.1:D);
+const SC=[['s1',0,3.5],['s2',3.5,6.75],['s3',6.75,8.9],['s4',8.9,11.5],['s5',11.5,14.5],['s6',14.5,17.3],['s7',17.3,20.5],['s8',20.5,99]];
+const CUTS=SC.slice(1).map(s=>s[1]);
+const CH=[[0,'01 · O PROBLEMA'],[3.5,'02 · A PESQUISA'],[8.9,'03 · O QUE FUNCIONA'],[17.3,'04 · A IA FAZ'],[20.5,'05 · SEU PASSO']];
+const $=id=>document.getElementById(id),V=$('v');
+const cl=x=>Math.max(0,Math.min(1,x)),eo=x=>1-Math.pow(1-cl(x),3);
+const back=x=>{x=cl(x);const c=1.9;return 1+(c+1)*Math.pow(x-1,3)+c*Math.pow(x-1,2)};
+const elastic=x=>{x=cl(x);return x===0||x===1?x:Math.pow(2,-10*x)*Math.sin((x*10-.75)*2.094)+1};
+const p=(t,a,d=.35)=>cl((t-a)/d);
+function pop(el,t,a,d=.35,from=.3){const k=p(t,a,d);el.style.opacity=k>0?1:0;el.style.transform=`scale(${from+(1-from)*back(k)})`}
+function spring(el,t,a,d=.7,dy=120){const k=p(t,a,d);el.style.opacity=k>0?1:0;el.style.transform=`translateY(${(1-elastic(k))*dy}px)`}
+function rise(el,t,a,d=.4,dy=60){const k=eo(p(t,a,d));el.style.opacity=k;el.style.transform=`translateY(${(1-k)*dy}px)`}
+// elementos extras
+const mk=(tag,css,par=V)=>{const e=document.createElement(tag);e.style.cssText=css;par.appendChild(e);return e};
+const prog=mk('div','position:absolute;left:0;top:0;height:10px;background:#ff6a1a;z-index:50;width:0');
+const dot=mk('div','position:absolute;border-radius:50%;background:#ff6a1a;z-index:40;opacity:0');
+const cv=mk('canvas','position:absolute;left:0;top:0;z-index:45');cv.width=1080;cv.height=1920;const cx=cv.getContext('2d');
+let seed=11;const rnd=()=>(seed=(seed*16807)%2147483647)/2147483647;
+const CC=['#ff6a1a','#ffd166','#4ade80','#f5f1ea','#ff4d4d'];
+const burst=(x,y,n)=>Array.from({length:n},()=>({x,y,vx:(rnd()-.5)*1400,vy:-600-rnd()*1300,r:rnd()*6,vr:(rnd()-.5)*12,c:CC[Math.floor(rnd()*5)],w:14+rnd()*14,h:8+rnd()*10}));
+const BURSTS=[[13.4,300,900,70],[21.4,540,820,110]].map(([t,x,y,n])=>({t,p:burst(x,y,n)}));
+const shineEl=mk('div','position:absolute;top:-20%;bottom:-20%;width:40%;left:-60%;transform:skewX(-20deg);background:linear-gradient(90deg,transparent,rgba(255,255,255,.55),transparent)',$('box'));
+const ring=(par,x,y)=>mk('div',`position:absolute;left:${x}px;top:${y}px;width:120px;height:120px;margin:-60px 0 0 -60px;border-radius:50%;border:6px solid #ff6a1a;opacity:0;z-index:30`,par);
+const rg=[ring($('s8'),165,1375),ring($('s8'),165,1375)];
+const ping=(el,t,a)=>{const k=t-a;if(k<0||k>.9){el.style.opacity=0;return}el.style.opacity=1-k/.9;el.style.transform=`scale(${1+k*2.6})`};
+// placar 531.000
+const BOARD='531.000';$('board').innerHTML=[...BOARD].map((c,i)=>c==='.'?'<span class="h" style="font-size:140px;color:#ff6a1a">.</span>':`<span class="flap" id="b${i}">0</span>`).join('');
+// corações
+$('hearts').innerHTML=[...Array(8)].map((_,i)=>`<span class="w" id="hh${i}">❤️</span>`).join(' ');
+// bolinhas do s3
+$('dots3').innerHTML=[1,2,3].map(i=>`<div id="d3${i}" style="width:120px;height:120px;border-radius:50%;background:#ff6a1a;color:#0a0908;display:grid;place-items:center;font:900 70px Inter">${i}</div>`).join('');
+const TXT='Escreve 20 primeiras frases pro meu post sobre [seu assunto].';
+const SCR='ABCDEFGHKMNOPRSTUVXZ';
+const scram=(t,a,word,step=.09)=>[...word].map((ch,i)=>t>=a+i*step?ch:SCR[Math.floor((Math.sin(t*80+i*9)*.5+.5)*SCR.length)%SCR.length]).join('');
+$('a4').style.display='inline-block';
+window.renderOld=function(t){
+ for(const [id,a,b] of SC){$(id).style.opacity=Math.min(p(t,a,.15),1-p(t,b-.12,.12))}
+ let ch='';for(const [a,s] of CH) if(t>=a) ch=s; $('chap').textContent=ch;
+ $('glow').style.transform=`translate(${Math.sin(t*.7)*60}px,${Math.cos(t*.5)*80}px)`;
+ // câmera + tremida
+ let sh=0;for(const a of [2.5,21.0]){const k=t-a;if(k>=0&&k<.35)sh=Math.max(sh,(1-k/.35)*24)}
+ const all=[0,...CUTS,99];let ci=0;for(let i=0;i<all.length-1;i++)if(t>=all[i])ci=i;
+ const zp=1+.035*cl((t-all[ci])/(Math.min(all[ci+1],D)-all[ci]));
+ document.querySelectorAll('.sc').forEach(s=>s.style.transform=`translate(${sh*Math.sin(t*170)}px,${sh*Math.cos(t*130)}px) scale(${zp})`);
+ // s1
+ ['a1','a2','a3'].forEach((id,i)=>spring($(id),t,.05+i*.08,.7,90));
+ pop($('a4'),t,.3,.4,.2);$('a4').textContent=t<1.0?scram(t,.45,'PARADO?',.08):'PARADO?';
+ $('a4').style.textShadow=t>1?`${-6-4*Math.sin(t*3)}px 6px 0 rgba(255,77,77,.5),${-12-8*Math.sin(t*3)}px 12px 0 rgba(255,209,102,.3)`:'none';
+ rise($('fl'),t,.9,.35);const fz=(t>1.2&&t<2.4)?Math.floor(t*12)%2:0;$('f2').textContent=fz?'3':'2';$('f2').style.transform=fz?'scaleY(.85)':'none';
+ const ks=p(t,2.5,.28);$('st1').style.opacity=ks>0?1:0;$('st1').style.transform=`rotate(-7deg) scale(${2.2-1.2*eo(ks)})`;
+ // s2 placar split-flap
+ [...BOARD].forEach((c,i)=>{if(c==='.')return;const e=$('b'+i),lock=4.4+i*.18;
+  if(t<3.6){e.textContent='0';return}
+  if(t>=lock){e.textContent=c;e.style.transform='none'}else{e.textContent=String(Math.floor(t*25+i*3)%10);e.style.transform=`scaleY(${.75+.25*Math.abs(Math.sin(t*40))})`}});
+ rise($('board'),t,3.6,.3);rise($('pf'),t,5.4,.3);
+ $('el').style.strokeDashoffset=2000*(1-eo(p(t,5.6,.6)));pop($('q2'),t,6.1,.35);
+ // s3 slice & split
+ rise($('t3'),t,6.85,.3);
+ const sk=eo(p(t,7.6,.45));const sp=$('slc').children;sp[0].style.transform=`translateX(${(1-sk)*-700}px)`;sp[1].style.transform=`translateX(${(1-sk)*700}px)`;$('slc').style.opacity=sk>0?1:0;
+ [1,2,3].forEach(i=>pop($('d3'+i),t,8.0+i*.15,.3));
+ // s4 cronômetro
+ const tk=cl((t-9.6)/1.8);$('tm').style.strokeDashoffset=264*tk;$('tmt').textContent=t<9.6?'3':String(Math.max(0,Math.ceil(3-tk*3)));
+ rise($('sk'),t,10.4,.3);if(t>11.0&&t<11.4)$('sk').style.transform=`translateX(${Math.sin(t*90)*10}px)`;
+ // s5 contador 4,6x + legenda karaokê no celular
+ rise($('tk'),t,11.7,.3);const mv=4.6*eo(p(t,12.0,1.2));$('mult').textContent=mv.toFixed(1).replace('.',',')+'×';
+ rise($('mini'),t,12.2,.35);const mw=['Legenda','acende','palavra','por','palavra'];const mi=Math.floor(cl((t-12.4)/1.8)*5.99);
+ $('mcap').innerHTML=mw.map((w,i)=>`<span style="color:${i<=mi&&t>12.4?'#ff6a1a':'#4a443e'}">${w}</span>`).join(' ');
+ // s6 corações + avião
+ for(let i=0;i<8;i++)pop($('hh'+i),t,15.0+i*.12,.25);
+ const pk=cl((t-16.1)/.9),px=-150+1300*eo(pk),py=1180-320*Math.sin(pk*Math.PI);
+ $('plane').style.opacity=t>16.1&&t<17.1?1:0;$('plane').style.transform=`translate(${px}px,${py}px) rotate(${-25+40*pk}deg)`;
+ rise($('r8'),t,16.3,.3);
+ // s7 chat + cartões empilhando
+ rise($('bub'),t,17.45,.3);$('typed').textContent=TXT.slice(0,Math.floor(TXT.length*cl((t-17.6)/1.6)));
+ $('cur').style.opacity=(t*3%1<.5&&t<19.3)?1:0;
+ ['h1','h2','h3'].forEach((id,i)=>spring($(id),t,19.3+i*.28,.6,200));
+ // s8 CTA
+ $('mq1').style.transform=`translateX(${-((t-20.5)*160)%900}px)`;$('mq2').style.transform=`translateX(${-900+((t-20.5)*160)%900}px)`;
+ rise($('q8'),t,20.6,.3);rise($('cm8'),t,20.7,.3);
+ if(t<21.4)pop($('box'),t,21.0,.45,.2);else{const b=60/92,ph=((t-21.4)%b)/b;const h=Math.exp(-ph*30)*.07+(ph>.18?Math.exp(-(ph-.18)*30)*.05:0);$('box').style.opacity=1;$('box').style.transform=`scale(${1+h}) rotate(${Math.sin(t*3)*1.5}deg)`}
+ $('box').textContent;shineEl.style.left=(-60+180*cl(((t-21.5)%1.4)/0.7))+'%';
+ rise($('dm'),t,21.6,.4);const kc=eo(p(t,22.0,.5));$('cmt').style.opacity=kc;$('cmt').style.transform=`translateY(${(1-kc)*300}px)`;
+ ping(rg[0],t,22.4);ping(rg[1],t,22.85);
+ // bolinha-transição
+ let dv=0,dr=0;for(const c of CUTS){const k=t-(c-.32);if(k>=0&&k<.55){dv=k<.32?1:1-(k-.32)/.23;dr=k<.32?eo(k/.32):1}}
+ const R=40+2300*dr;Object.assign(dot.style,{opacity:dv,width:R+'px',height:R+'px',left:(540-R/2)+'px',top:(960-R/2)+'px'});
+ prog.style.width=(1080*Math.min(1,t/D))+'px';
+ // confete
+ cx.clearRect(0,0,1080,1920);
+ for(const b of BURSTS){const k=t-b.t;if(k<0||k>2.2)continue;for(const q of b.p){cx.save();cx.globalAlpha=Math.max(0,1-k/2.2);cx.translate(q.x+q.vx*k,q.y+q.vy*k+1500*k*k);cx.rotate(q.r+q.vr*k);cx.fillStyle=q.c;cx.fillRect(-q.w/2,-q.h/2,q.w,q.h);cx.restore()}}
+ // legenda karaokê (palavra por palavra)
+ let li=0;LINES.forEach((l,i)=>{if(t>=l[0]-.05)li=i});
+ const [a,txt]=LINES[li],ws=txt.split(' '),dur=ENDS[li]-a-.3;
+ $('cap').innerHTML=ws.map((w,i)=>{const on=t>=a+dur*i/ws.length;const k=/PARADO|parado|COFRE|crescer|3|4,6|IA/.test(w);return `<span class="${on?(k?'on k':'on'):''}">${w}</span>`}).join(' ');
+};
+</script><script>
+const WV=[[[0.0, "Seu"], [0.38, "Instagram"], [0.73, "tá"], [0.98, "parado"], [1.38, "nos"], [1.53, "mesmos"], [1.89, "seguidores?"]], [[2.89, "Tem"], [3.07, "conserto!"]], [[4.07, "Eu"], [4.24, "usei"], [4.56, "uma"], [4.71, "IA"], [4.93, "que"], [5.13, "estudou"], [5.49, "531"]], [[6.64, "mil"], [6.98, "perfis."]], [[8.04, "E"], [8.29, "ela"], [8.4, "descobriu"], [8.89, "três"], [9.11, "coisas"], [9.6, "que"], [9.78, "fazem"]], [[10.07, "um"], [10.29, "vídeo"], [10.53, "crescer."]], [[11.33, "Um:"], [11.87, "a"], [11.91, "primeira"], [12.16, "frase."]], [[12.96, "Você"], [13.13, "tem"], [13.31, "3"], [13.56, "segundos,"], [14.31, "senão"], [14.64, "a"], [14.73, "pessoa"]], [[15.0, "passa"], [15.24, "direto."]], [[16.0, "Dois:"], [16.78, "legenda"], [17.13, "na"], [17.27, "tela."]], [[17.98, "Com"], [18.07, "legenda,"], [18.84, "o"], [18.93, "vídeo"], [19.13, "teve"], [19.36, "4,6"], [20.29, "vezes"]], [[20.58, "mais"], [20.84, "views."]], [[21.49, "Três:"], [22.09, "um"], [22.6, "post"], [22.78, "que"], [23.02, "dá"], [23.13, "vontade"], [23.51, "de"]], [[23.69, "mandar"], [23.96, "pra"], [24.13, "alguém."]], [[24.87, "E"], [24.93, "o"], [24.98, "melhor:"]], [[25.67, "a"], [25.76, "IA"], [25.91, "escreve"], [26.33, "essas"], [26.49, "frases"], [26.89, "por"], [27.13, "você."]], [[28.0, "Quer"], [28.16, "os"], [28.36, "prompts"], [28.91, "prontos?"]], [[29.71, "Comenta"], [30.13, "COFRE"], [30.47, "que"], [30.62, "eu"], [30.71, "te"], [30.78, "mando"], [31.04, "no"]], [[31.13, "direct!"]]];
+const OLD=[0,3.5,6.75,8.9,11.5,14.5,17.3,20.5,24],NEW=[0,3.9,7.9,11.1,15.8,21.3,24.7,27.8,33.5],DN=33.5;
+function warp(t){for(let i=0;i<NEW.length-1;i++)if(t<NEW[i+1])return OLD[i]+(t-NEW[i])*(OLD[i+1]-OLD[i])/(NEW[i+1]-NEW[i]);return 24}
+window.render=function(t){renderOld(warp(t));
+ prog.style.width=(1080*Math.min(1,t/DN))+'px';
+ let li=0;WV.forEach((l,i)=>{if(t>=l[0][0]-.1)li=i});
+ document.getElementById('cap').innerHTML=WV[li].map(([a,w])=>{const on=t>=a;const k=/parado|COFRE|crescer|^3$|4,6|IA|prompts/i.test(w);return `<span class="${on?(k?'on k':'on'):''}">${w}</span>`}).join(' ');};
+window.render(0);
+</script></body></html>
