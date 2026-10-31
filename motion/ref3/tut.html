@@ -1,0 +1,208 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;700&display=swap">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{width:1080px;height:1920px;overflow:hidden;background:#f3ece0;font-family:Inter,sans-serif}
+#v{position:absolute;inset:0;overflow:hidden;background:#f3ece0;
+ background-image:linear-gradient(#e8dfcf 2px,transparent 2px),linear-gradient(90deg,#e8dfcf 2px,transparent 2px);background-size:90px 90px}
+#world{position:absolute;left:0;top:0;width:1080px;height:1920px;transform-origin:0 0}
+#phone{position:absolute;left:150px;top:330px;width:780px;height:1500px;border-radius:96px;background:#111;padding:22px;box-shadow:0 60px 120px rgba(60,40,20,.28),0 0 0 4px #2a2a2a inset}
+#scr{position:relative;width:100%;height:100%;border-radius:76px;overflow:hidden;background:#efe7dd}
+.app{position:absolute;inset:0}
+.sb{height:64px;display:flex;justify-content:space-between;align-items:center;padding:0 54px;font-weight:700;font-size:26px}
+/* chat app */
+#chat{background:#efe7dd}
+#chat .sb{background:#1f6f54;color:#fff}
+.hd{height:118px;background:#1f6f54;color:#fff;display:flex;align-items:center;gap:22px;padding:0 30px}
+.av{width:76px;height:76px;border-radius:50%;background:#f0b48a;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:34px;color:#6b3a1c}
+.hd b{font-size:34px;display:block}.hd small{font-size:24px;opacity:.85}
+#msgs{position:absolute;left:0;right:0;top:182px;bottom:120px;padding:30px 28px;display:flex;flex-direction:column;gap:18px;justify-content:flex-end}
+.bub{max-width:560px;padding:18px 24px 30px;border-radius:26px;font-size:31px;line-height:1.35;position:relative;box-shadow:0 2px 0 rgba(0,0,0,.08);color:#1b1b1b}
+.bub .tm{position:absolute;right:16px;bottom:8px;font-size:19px;color:#7b8a83}
+.me{align-self:flex-end;background:#d4f5c4;border-top-right-radius:6px}
+.th{align-self:flex-start;background:#fff;border-top-left-radius:6px}
+.ck{color:#34a4e8;font-weight:800}
+.day{align-self:center;background:#fff8e6;color:#6c6455;font-size:22px;padding:8px 18px;border-radius:14px;font-weight:600}
+#cin{position:absolute;left:20px;right:20px;bottom:24px;height:84px;background:#fff;border-radius:42px;display:flex;align-items:center;padding:0 30px;font-size:30px;color:#999;gap:14px}
+#cin .txt{flex:1;color:#1b1b1b;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#send1{width:84px;height:84px;border-radius:50%;background:#1f6f54;position:absolute;right:-8px;top:0;display:flex;align-items:center;justify-content:center;color:#fff;font-size:36px}
+#menu{position:absolute;background:#fff;border-radius:20px;box-shadow:0 20px 50px rgba(0,0,0,.25);font-size:30px;overflow:hidden;opacity:0;width:330px}
+#menu div{padding:22px 30px;border-bottom:1px solid #eee;display:flex;justify-content:space-between}
+#menu .on{background:#e9f6ef}
+.toast{position:absolute;left:50%;transform:translateX(-50%);background:#222;color:#fff;font-size:26px;padding:16px 30px;border-radius:40px;opacity:0;white-space:nowrap;font-weight:600}
+#typing{opacity:0}
+/* ai app */
+#ai{background:#1c1a18;color:#ece6dc;transform:translateX(100%)}
+#ai .sb{color:#ece6dc}
+.aihd{height:110px;display:flex;align-items:center;gap:18px;padding:0 40px;border-bottom:1px solid #2e2b28;font-weight:700;font-size:32px}
+.dot{width:46px;height:46px;border-radius:50%;background:#ff6a1a;display:flex;align-items:center;justify-content:center;color:#1c1a18;font-weight:900;font-size:26px}
+#ubox{position:absolute;left:40px;right:40px;top:200px;background:#2c2926;border-radius:30px;padding:28px 30px;font-size:30px;line-height:1.42;opacity:0}
+#ubox .lbl{font-size:22px;color:#a39a8e;font-weight:700;margin-bottom:8px}
+#resp{position:absolute;left:40px;right:40px;top:640px;font-size:33px;line-height:1.5;opacity:0}
+#resp .lbl{display:flex;align-items:center;gap:14px;font-size:24px;color:#a39a8e;font-weight:700;margin-bottom:14px}
+#resp .lbl .dot{width:36px;height:36px;font-size:20px}
+#think{font-size:28px;color:#a39a8e}
+#cpy{display:inline-flex;gap:10px;align-items:center;margin-top:22px;border:2px solid #4a4540;border-radius:16px;padding:12px 22px;font-size:26px;color:#d6cfc4;opacity:0}
+#ain{position:absolute;left:30px;right:30px;bottom:30px;min-height:96px;background:#2c2926;border-radius:30px;padding:24px 120px 24px 30px;font-size:29px;line-height:1.4;color:#ece6dc}
+#ain .ph{color:#7d756b}
+#send2{position:absolute;right:16px;bottom:16px;width:66px;height:66px;border-radius:50%;background:#ff6a1a;color:#1c1a18;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:32px}
+.caret{display:inline-block;width:3px;height:1.05em;background:#ff6a1a;vertical-align:-.15em;margin-left:2px}
+/* finger */
+#fing{position:absolute;width:90px;height:90px;margin:-45px 0 0 -45px;border-radius:50%;background:rgba(255,106,26,.35);border:5px solid #ff6a1a;opacity:0;z-index:30}
+#rip{position:absolute;width:90px;height:90px;margin:-45px 0 0 -45px;border-radius:50%;border:5px solid #ff6a1a;opacity:0;z-index:29}
+/* overlays (fixed, not zoomed) */
+#step{position:absolute;left:60px;top:110px;display:flex;align-items:center;gap:22px;opacity:0;z-index:60}
+#step .n{background:#ff6a1a;color:#fff;font-weight:900;font-size:40px;border-radius:24px;padding:12px 26px;letter-spacing:-.02em}
+#step .t{background:#1b1410;color:#f3ece0;font-weight:800;font-size:40px;border-radius:24px;padding:12px 28px;letter-spacing:-.02em}
+#hook{position:absolute;left:60px;right:60px;top:110px;font-weight:900;font-size:76px;letter-spacing:-.045em;line-height:1.02;color:#1b1410;z-index:60}
+#hook span{color:#ff6a1a}
+#stamp{position:absolute;left:50%;top:430px;transform:translate(-50%,0) rotate(-8deg);border:10px solid #1f8f5f;color:#1f8f5f;font-weight:900;font-size:92px;padding:6px 36px;border-radius:26px;opacity:0;z-index:61;background:rgba(243,236,224,.85);letter-spacing:-.04em;white-space:nowrap}
+#end{position:absolute;inset:0;background:rgba(20,15,12,.94);opacity:0;z-index:70;display:flex;flex-direction:column;justify-content:center;padding:0 80px;gap:34px;color:#f3ece0}
+#end h2{font-size:64px;font-weight:900;letter-spacing:-.04em;line-height:1.05}
+.rc{display:flex;gap:24px;align-items:center;font-size:42px;font-weight:700;opacity:0}
+.rc i{font-style:normal;background:#ff6a1a;color:#1b1410;font-weight:900;width:72px;height:72px;border-radius:20px;display:flex;align-items:center;justify-content:center;flex:none}
+#cta{margin-top:30px;display:flex;align-items:center;gap:26px;opacity:0}
+#cta .c{font-size:54px;font-weight:900}
+#cta .k{background:#ff6a1a;color:#1b1410;font-weight:900;font-size:96px;letter-spacing:-.05em;border-radius:32px;padding:4px 40px 16px}
+#cta2{font-size:34px;color:#b5aca2;font-weight:700;opacity:0}
+#hand{font-family:'JetBrains Mono',monospace;font-size:30px;color:#8a8178;opacity:0}
+#prog{position:absolute;left:0;top:0;height:10px;background:#ff6a1a;z-index:80}
+#cf{position:absolute;left:0;top:0;z-index:65;pointer-events:none}
+</style></head><body><div id="v">
+<div id="world">
+ <div id="phone"><div id="scr">
+  <div class="app" id="chat">
+   <div class="sb"><span>9:41</span><span>▮▮▮ 87%</span></div>
+   <div class="hd"><span style="font-size:40px">‹</span><div class="av">M</div><div><b>Marina (cliente)</b><small id="seen">visto por último há 2 dias</small></div></div>
+   <div id="msgs">
+    <div class="day">ONTEM</div>
+    <div class="bub th">Oi! Quanto fica o pacote completo?<span class="tm">14:02</span></div>
+    <div class="bub me">Fica R$ 1.200, já com tudo incluso 😊<span class="tm">14:05 <span class="ck">✓✓</span></span></div>
+    <div class="bub th" id="caro">Hmm… tá caro.<span class="tm">14:31</span></div>
+    <div class="bub me" id="sent" style="display:none"></div>
+    <div class="bub th" id="typing" style="display:none;padding:22px 28px;font-size:40px;letter-spacing:6px;color:#7b8a83">•••</div>
+    <div class="bub th" id="win" style="display:none">Faz em 3x então. Me manda o pix 🙌<span class="tm">agora</span></div>
+   </div>
+   <div id="cin"><span>😊</span><span class="txt" id="cintxt">Mensagem</span><div id="send1">➤</div></div>
+   <div id="menu"><div class="on">Copiar <span>⧉</span></div><div>Responder <span>↩</span></div><div>Encaminhar <span>↪</span></div></div>
+   <div class="toast" id="toast1" style="top:1180px">Mensagem copiada ✓</div>
+  </div>
+  <div class="app" id="ai">
+   <div class="sb"><span>9:41</span><span>▮▮▮ 87%</span></div>
+   <div class="aihd"><div class="dot">✳</div>Sua IA</div>
+   <div id="ubox"><div class="lbl">VOCÊ</div><span id="utxt"></span></div>
+   <div id="resp"><div class="lbl"><div class="dot">✳</div>IA</div><div id="think">pensando…</div><span id="rtxt"></span><br><span id="cpy">⧉ Copiar</span></div>
+   <div id="ain"><span id="aintxt"></span><span class="ph" id="ainph">Pergunte qualquer coisa</span><div id="send2">↑</div></div>
+   <div class="toast" id="toast2" style="top:1180px;background:#ff6a1a;color:#1b1410">Resposta copiada ✓</div>
+  </div>
+  <div id="rip"></div><div id="fing"></div>
+ </div></div>
+</div>
+<div id="hook">Cliente falou <span>"tá caro"</span><br>e sumiu?</div>
+<div id="step"><div class="n" id="stn">PASSO 1</div><div class="t" id="stt">Copia a mensagem</div></div>
+<div id="stamp">VENDA SALVA ✓</div>
+<canvas id="cf" width="1080" height="1920"></canvas>
+<div id="end">
+ <h2>Salva pra usar quando<br>o cliente sumir:</h2>
+ <div class="rc" id="r1"><i>1</i>Copia o "tá caro"</div>
+ <div class="rc" id="r2"><i>2</i>Cola na IA com o prompt</div>
+ <div class="rc" id="r3"><i>3</i>Copia a resposta e manda</div>
+ <div id="cta"><span class="c">Comenta</span><span class="k" id="kw">COFRE</span></div>
+ <div id="cta2">que eu te mando o prompt no direct ✓</div>
+</div>
+<div id="prog"></div>
+</div>
+<script src="cue.js"></script>
+<script>
+const C=window.CUE||{D:22,p0:.3,B:3.2,C:6.2,D2:9.6,E:12.6,F:15.6,G:18.2,te:9.2,re:12.2};
+const $=id=>document.getElementById(id);
+const cl=x=>Math.max(0,Math.min(1,x)),io=x=>{x=cl(x);return x<.5?4*x*x*x:1-Math.pow(-2*x+2,3)/2},eo=x=>1-Math.pow(1-cl(x),3);
+const back=x=>{x=cl(x);const c=1.7,c3=c+1;return 1+c3*Math.pow(x-1,3)+c*Math.pow(x-1,2)};
+const fade=(t,a,d=.25)=>cl((t-a)/d);
+const PROMPT='Você é meu melhor vendedor. O cliente disse "tá caro". Responda curto, educado, com uma pergunta no final. Sem dar desconto.';
+const RESP='Entendo, Marina! Pra eu te ajudar melhor: o que pesou mais, o valor total ou a forma de pagamento? Consigo dividir em 3x sem juros, e o resultado começa já na primeira semana.';
+const REPLY='Entendo, Marina! O que pesou mais: o valor ou a forma de pagamento? Consigo fazer em 3x sem juros 🙂';
+// phone screen origin in world coords
+const PX=172,PY=352;
+// camera keyframes [t, cx, cy, zoom] (cx,cy = world point at screen center)
+function cams(){const c=C;return [
+ [0,540,1000,1.0],[c.p0+.15,540,1000,1.0],[c.p0+.75,470,1000,1.75],
+ [c.B-.2,470,1000,1.75],[c.B+.35,520,1020,1.45],[c.B+1.7,520,1020,1.45],
+ [c.C-.1,540,1080,1.0],[c.C+.45,540,1080,1.0],[c.C+.95,540,1600,1.6],
+ [c.te+.05,540,1600,1.6],[c.D2+.2,540,1250,1.5],[c.re,540,1350,1.55],
+ [c.E+.15,540,1350,1.55],[c.E+.75,540,1080,1.0],[c.E+1.3,560,1700,1.55],[c.E+2.2,560,1700,1.55],
+ [c.F-.2,540,1250,1.25],[c.F+.9,480,1330,1.7],[c.G-.5,480,1330,1.7],[c.G,540,1000,1.0],[99,540,1000,1.0]]}
+function cam(t){const k=cams();for(let i=0;i<k.length-1;i++){const a=k[i],b=k[i+1];if(t>=a[0]&&t<b[0]){const p=io((t-a[0])/(b[0]-a[0]));return [a[1]+(b[1]-a[1])*p,a[2]+(b[2]-a[2])*p,a[3]+(b[3]-a[3])*p]}}return k[k.length-1].slice(1)}
+// taps [time, screenX, screenY, hold]
+function taps(){const c=C;return [[c.B+.3,190,0,0.55,'caro'],[c.B+1.25,0,0,0,'menu'],[c.te+.1,700,1400,0],[c.E+.25,120,0,0,'cpy'],[c.E+1.45,700,1400,0]]}
+function el(id){return $(id).getBoundingClientRect()}
+let seed=3;const rnd=()=>(seed=(seed*16807)%2147483647)/2147483647;
+const CF=[...Array(110)].map(()=>({vx:(rnd()-.5)*1500,vy:-700-rnd()*1200,r:rnd()*6,vr:(rnd()-.5)*12,c:['#ff6a1a','#1f8f5f','#ffd166','#1b1410'][Math.floor(rnd()*4)],w:14+rnd()*12,h:8+rnd()*8}));
+const cx=$('cf').getContext('2d');
+window.render=function(t){
+ const c=C;$('prog').style.width=(1080*Math.min(1,t/c.D))+'px';
+ // hook
+ const hk=$('hook');hk.style.opacity=t<c.B-.3?eo((t-.05)/.3):1-fade(t,c.B-.3,.25);hk.style.transform=`translateY(${(1-eo(t/.4))*-30}px)`;
+ // caro bubble pop
+ const cr=$('caro');const pk=cl((t-c.p0)/.35);cr.style.transform=`scale(${t<c.p0?0:back(pk)})`;cr.style.transformOrigin='0 0';
+ cr.style.background=(t>c.B+.3&&t<c.B+1.6)?'#dfe8e4':'#fff';
+ // menu
+ const mn=$('menu');const mo=t>c.B+.75&&t<c.B+1.45;mn.style.opacity=mo?eo((t-c.B-.75)/.15):0;
+ const crr=cr.getBoundingClientRect();
+ // toast1
+ $('toast1').style.opacity=(t>c.B+1.4&&t<c.B+2.4)?1-fade(t,c.B+2.1,.3):0;
+ // apps
+ const sw1=io((t-(c.C-.15))/.45),sw2=io((t-(c.E+.55))/.45);
+ const aiX=t<c.E+.55?(1-sw1)*100:sw2*100;
+ $('ai').style.transform=`translateX(${aiX}%)`;$('chat').style.transform=`translateX(${t<c.E+.55?-sw1*30:-(1-sw2)*30}%)`;
+ // typing prompt in AI input
+ const ts=c.C+.5,te=c.te;let n=0;if(t>ts)n=Math.round(PROMPT.length*cl((t-ts)/(te-ts)));
+ const sent=t>c.te+.15;
+ $('aintxt').innerHTML=sent?'':PROMPT.slice(0,n)+(t>ts&&!sent&&(Math.floor(t*3)%2==0)?'<span class="caret"></span>':'');
+ $('ainph').style.display=(n>0&&!sent)?'none':'inline';
+ $('ubox').style.opacity=sent?eo((t-c.te-.15)/.25):0;$('utxt').textContent=PROMPT;
+ $('ubox').style.transform=`translateY(${sent?(1-eo((t-c.te-.15)/.3))*80:0}px)`;
+ // response
+ $('resp').style.opacity=sent?fade(t,c.te+.3,.2):0;
+ const rs=c.D2,re=c.re;$('think').style.display=t<rs?'block':'none';
+ const rn=t<rs?0:Math.round(RESP.length*cl((t-rs)/(re-rs)));$('rtxt').textContent=RESP.slice(0,rn);
+ $('cpy').style.opacity=fade(t,re+.05,.2);$('cpy').style.background=(t>c.E+.25&&t<c.E+.6)?'#3a3530':'transparent';
+ $('toast2').style.opacity=(t>c.E+.3&&t<c.E+1.0)?1:0;
+ // paste in chat input
+ const pasted=t>c.E+1.05&&t<c.E+1.5;$('cintxt').textContent=pasted?REPLY:'Mensagem';$('cintxt').style.color=pasted?'#1b1b1b':'#999';
+ const s=$('sent');if(t>c.E+1.5){s.style.display='block';s.innerHTML=REPLY+'<span class="tm">agora <span class="ck">✓✓</span></span>';const k=cl((t-c.E-1.5)/.35);s.style.transform=`scale(${back(k)})`;s.style.transformOrigin='100% 100%'}else s.style.display='none';
+ // typing indicator then win
+ const ty=$('typing');ty.style.display=(t>c.F-.1&&t<c.F+.85)?'block':'none';ty.style.opacity=1;ty.textContent=['•  ','•• ','•••'][Math.floor(t*6)%3];
+ $('seen').textContent=t>c.F-.1?(t<c.F+.85?'digitando…':'online'):'visto por último há 2 dias';
+ const w=$('win');if(t>c.F+.85){w.style.display='block';w.style.transform=`scale(${back(cl((t-c.F-.85)/.35))})`;w.style.transformOrigin='0 100%';w.style.opacity=1}else w.style.display='none';
+ // stamp
+ const sp=$('stamp');const sk=cl((t-c.F-1.35)/.22);sp.style.opacity=t>c.F+1.35&&t<c.G?1:0;sp.style.transform=`translate(-50%,0) rotate(-8deg) scale(${2.2-1.2*eo(sk)})`;
+ // step labels
+ const stp=[[c.B,'PASSO 1','Copia a mensagem'],[c.C,'PASSO 2','Cola na IA com o prompt'],[c.E,'PASSO 3','Copia a resposta e manda'],[c.F,'RESULTADO','O cliente voltou']];
+ let cur=null;for(const x of stp)if(t>=x[0]-.05)cur=x;const st=$('step');
+ if(cur&&t<c.G-.2){st.style.opacity=1;$('stn').textContent=cur[1];$('stt').textContent=cur[2];const k=eo((t-cur[0]+.05)/.3);st.style.transform=`translateX(${(1-k)*-120}px)`;st.style.opacity=k}else st.style.opacity=0;
+ // camera
+ const [x,y,z]=cam(t);const W=$('world');W.style.transform=`translate(${540-x*z}px,${1000-y*z}px) scale(${z})`;
+ // finger taps (positions computed in screen space then converted back)
+ const f=$('fing'),r=$('rip');f.style.opacity=0;r.style.opacity=0;
+ const tp=taps();for(const [a,sx,sy,hold,ref] of tp){const k=t-a;if(k<-.25||k>.45+hold)continue;
+  let px=sx,py=sy;const sr=$('scr').getBoundingClientRect();
+  if(ref==='caro'){const b=$('caro').getBoundingClientRect();px=(b.left+b.width*.4-sr.left)/z;py=(b.top+b.height*.5-sr.top)/z}
+  if(ref==='menu'){const b=$('menu').children[0].getBoundingClientRect();px=(b.left+90-sr.left)/z;py=(b.top+b.height/2-sr.top)/z}
+  if(ref==='cpy'){const b=$('cpy').getBoundingClientRect();px=(b.left+b.width/2-sr.left)/z;py=(b.top+b.height/2-sr.top)/z}
+  f.style.left=px+'px';f.style.top=py+'px';r.style.left=px+'px';r.style.top=py+'px';
+  f.style.opacity=k<0?1+k/.25:(k<hold+.25?1:1-(k-hold-.25)/.2);f.style.transform=`scale(${k>=0&&k<hold+.12?.82:1})`;
+  if(k>=0){const q=cl(k/.45);r.style.opacity=1-q;r.style.transform=`scale(${1+q*1.6})`}}
+ // menu position near caro bubble
+ const sr=$('scr').getBoundingClientRect();mn.style.left=((crr.left-sr.left)/z+40)+'px';mn.style.top=((crr.top-sr.top)/z-260)+'px';
+ // confetti on win
+ cx.clearRect(0,0,1080,1920);const k0=t-(c.F+.9);if(k0>0&&k0<2.2)for(const p of CF){const X=540+p.vx*k0,Y=1100+p.vy*k0+1500*k0*k0;cx.save();cx.globalAlpha=1-k0/2.2;cx.translate(X,Y);cx.rotate(p.r+p.vr*k0);cx.fillStyle=p.c;cx.fillRect(-p.w/2,-p.h/2,p.w,p.h);cx.restore()}
+ // end card
+ const e=$('end');e.style.opacity=fade(t,c.G,.3);
+ ['r1','r2','r3'].forEach((id,i)=>{const k=eo((t-c.G-.25-i*.3)/.3);$(id).style.opacity=k;$(id).style.transform=`translateX(${(1-k)*-60}px)`});
+ const ck=eo((t-c.Gc)/.3);$('cta').style.opacity=ck;$('cta2').style.opacity=fade(t,c.Gc+.4,.3);
+ const b=60/92,ph=t>c.Gc?((t-c.Gc)%b)/b:1;$('kw').style.transform=`scale(${(1-ck)*.4+ck*(1+Math.exp(-ph*30)*.08)})`;
+};
+if(!window.CUE)C.Gc=C.G+1.4;
+window.render(0);
+</script></body></html>
