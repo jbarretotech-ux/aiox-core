@@ -40,7 +40,7 @@ body{width:1920px;height:1080px;overflow:hidden;font-family:Inter,sans-serif;bac
 const A=window.AULA;const cl=v=>Math.max(0,Math.min(1,v)),eo=v=>1-Math.pow(1-cl(v),3);
 const back=v=>{v=cl(v);const a=1.6;return 1+(a+1)*Math.pow(v-1,3)+a*Math.pow(v-1,2)};
 const $s=document.getElementById('scenes');document.getElementById('aulaTag').textContent=A.tag;
-const words=html=>html.replace(/(<i>.*?<\/i>|[^\s<]+)/g,m=>`<span class="w">${m}</span>`);
+const words=html=>html.replace(/(<i>.*?<\/i>[,.!?:]*|[^\s<]+)/g,m=>`<span class="w">${m}</span>`);
 A.scenes.forEach((s,i)=>{const d=document.createElement('div');d.className='sc';d.id='s'+i;
  if(s.type==='frase')d.innerHTML=`<div class="frase">${words(s.html)}</div>`;
  if(s.type==='chat')d.innerHTML=`<div class="win"><div class="bar"><b style="background:#ff5f57"></b><b style="background:#febc2e"></b><b style="background:#28c840"></b><span>${s.app||'Sua IA'}</span></div><div class="msg u"><span class="ty"></span></div><div class="msg ia" style="opacity:0"><span class="l">✳ IA</span><span class="ry"></span></div></div><div class="side">${words(s.html)}</div>`;
