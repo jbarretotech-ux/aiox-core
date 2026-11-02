@@ -1,0 +1,63 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&family=Instrument+Serif:ital@1&family=JetBrains+Mono:wght@500;700&display=swap">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{width:1920px;height:1080px;overflow:hidden;font-family:Inter,sans-serif;background:#f3ece0;color:#1b1410}
+#v{position:absolute;inset:0;background:#f3ece0;background-image:linear-gradient(#e8dfcf 2px,transparent 2px),linear-gradient(90deg,#e8dfcf 2px,transparent 2px);background-size:90px 90px}
+#city{position:absolute;left:0;right:0;bottom:0;height:260px;opacity:.5}
+#top{position:absolute;left:70px;top:56px;display:flex;gap:18px;align-items:center;font-weight:800;font-size:30px}
+#top .a{color:#ff6a1a}#top .pill{background:#1b1410;color:#f3ece0;border-radius:40px;padding:8px 22px;font-size:24px}
+#prog{position:absolute;left:0;top:0;height:8px;background:#ff6a1a}
+.sc{position:absolute;inset:0;opacity:0}
+.frase{position:absolute;left:160px;right:160px;top:50%;transform:translateY(-50%);font-weight:900;font-size:96px;letter-spacing:-.04em;line-height:1.05;text-align:center}
+.frase i{font-family:'Instrument Serif';font-weight:400;color:#ff6a1a;font-size:1.12em;letter-spacing:-.01em}
+.w{display:inline-block;opacity:0;margin-right:.22em}
+.win{position:absolute;left:150px;top:200px;width:880px;height:640px;background:#1c1a18;border-radius:28px;box-shadow:0 40px 90px rgba(60,40,20,.3);overflow:hidden;color:#ece6dc}
+.win .bar{height:58px;display:flex;align-items:center;gap:12px;padding:0 24px;background:#26231f}
+.win .bar b{width:16px;height:16px;border-radius:50%;display:block}
+.win .bar span{margin-left:16px;color:#a39a8e;font-size:22px;font-weight:600}
+.msg{margin:28px 30px 0;padding:22px 26px;border-radius:22px;font-size:28px;line-height:1.4}
+.u{background:#2c2926;margin-left:120px}
+.ia{color:#ece6dc}.ia .l{color:#ff6a1a;font-weight:800;font-size:22px;display:block;margin-bottom:6px}
+.side{position:absolute;left:1110px;right:110px;top:50%;transform:translateY(-50%);font-weight:900;font-size:72px;letter-spacing:-.035em;line-height:1.05}
+.side i{font-family:'Instrument Serif';font-weight:400;color:#ff6a1a;font-size:1.12em}
+.lista{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);display:grid;gap:26px;width:1100px}
+.it{display:flex;gap:28px;align-items:center;background:#fff8ee;border-radius:30px;padding:26px 36px;font-size:54px;font-weight:800;box-shadow:0 14px 40px rgba(60,40,20,.12);opacity:0}
+.it em{font-style:normal;background:#ff6a1a;color:#fff;width:84px;height:84px;border-radius:24px;display:flex;align-items:center;justify-content:center;flex:none;font-size:46px}
+.ltit{position:absolute;left:0;right:0;top:150px;text-align:center;font-weight:900;font-size:60px;letter-spacing:-.03em}
+.fim{position:absolute;inset:0;background:#1b1410;color:#f3ece0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:40px}
+.fim .s{font-size:120px;color:#ff6a1a}
+.fim h2{font-weight:900;font-size:96px;letter-spacing:-.04em}
+.fim .b{background:#ff6a1a;color:#1b1410;font-weight:900;font-size:52px;border-radius:60px;padding:22px 60px}
+</style></head><body><div id="v">
+<svg id="city" viewBox="0 0 1920 260" preserveAspectRatio="none"><path fill="none" stroke="#c9b9a3" stroke-width="3" d="M0 260V180h90v-60h70v80h60V90h110v110h50v-70h80v130h60V60h120v200h40v-90h90v90h70V120h100v140h60v-70h90v70h50V40h130v220h40v-110h90v110h60v-80h80v80h70V100h110v160h50v-60h100v60"/></svg>
+<div id="top"><span><span class="a">✳</span> Jotabê IA</span><span class="pill" id="aulaTag"></span></div>
+<div id="scenes"></div>
+<div id="prog"></div>
+</div>
+<script src="data.js"></script>
+<script>
+const A=window.AULA;const cl=v=>Math.max(0,Math.min(1,v)),eo=v=>1-Math.pow(1-cl(v),3);
+const back=v=>{v=cl(v);const a=1.6;return 1+(a+1)*Math.pow(v-1,3)+a*Math.pow(v-1,2)};
+const $s=document.getElementById('scenes');document.getElementById('aulaTag').textContent=A.tag;
+const words=html=>html.replace(/(<i>.*?<\/i>|[^\s<]+)/g,m=>`<span class="w">${m}</span>`);
+A.scenes.forEach((s,i)=>{const d=document.createElement('div');d.className='sc';d.id='s'+i;
+ if(s.type==='frase')d.innerHTML=`<div class="frase">${words(s.html)}</div>`;
+ if(s.type==='chat')d.innerHTML=`<div class="win"><div class="bar"><b style="background:#ff5f57"></b><b style="background:#febc2e"></b><b style="background:#28c840"></b><span>${s.app||'Sua IA'}</span></div><div class="msg u"><span class="ty"></span></div><div class="msg ia" style="opacity:0"><span class="l">✳ IA</span><span class="ry"></span></div></div><div class="side">${words(s.html)}</div>`;
+ if(s.type==='lista')d.innerHTML=`<div class="ltit">${s.title||''}</div><div class="lista">${s.items.map(x=>`<div class="it"><em>${x[0]}</em>${x[1]}</div>`).join('')}</div>`;
+ if(s.type==='fim')d.innerHTML=`<div class="fim"><div class="s">✳</div><h2>${s.title}</h2><div class="b">${s.btn}</div></div>`;
+ $s.appendChild(d)});
+window.render=function(t){
+ document.getElementById('prog').style.width=(1920*Math.min(1,t/A.D))+'px';
+ A.scenes.forEach((s,i)=>{const el=document.getElementById('s'+i);const a=s.at,b=i+1<A.scenes.length?A.scenes[i+1].at:A.D;
+  const u=t-a,d=b-a;const vis=t>=a-0.001&&t<b;el.style.opacity=vis?Math.min(eo(u/.3),1-eo((u-d+.25)/.25)):0;if(!vis)return;
+  const ws=el.querySelectorAll('.w');const span=Math.max(.5,(s.dur||d*.55));ws.forEach((w,k)=>{const p=eo((u-.1-k*span/ws.length)/.3);w.style.opacity=p;w.style.transform=`translateY(${(1-p)*30}px)`});
+  if(s.type==='chat'){const ty=el.querySelector('.ty');const n=Math.round(s.user.length*cl((u-.2)/(d*.35)));ty.textContent=s.user.slice(0,n);
+   const r=el.querySelector('.ia');const rs=.2+d*.42;r.style.opacity=cl((u-rs)/.2);const rn=Math.round(s.ia.length*cl((u-rs)/(d*.35)));el.querySelector('.ry').textContent=s.ia.slice(0,rn);
+   el.querySelector('.win').style.transform=`translateY(${(1-eo(u/.5))*60}px)`}
+  if(s.type==='lista'){el.querySelectorAll('.it').forEach((it,k)=>{const q=(u-.3-k*(s.gap||0.8));it.style.opacity=cl(q/.2);it.style.transform=`scale(${q<0?.6:back(q/.4)})`})}
+  if(s.type==='fim'){const f=el.querySelector('.fim');f.querySelector('.s').style.transform=`rotate(${u*40}deg) scale(${back(u/.5)})`;f.querySelector('.b').style.transform=`scale(${1+Math.exp(-((u*92/60)%1)*30)*.06})`}
+ });
+};
+render(0);
+</script></body></html>
