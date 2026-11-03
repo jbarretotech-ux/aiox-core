@@ -169,12 +169,12 @@ def main():
         if cur and t < dur:
             wtxt = cur[-1][2].upper()
             tw = dd.textlength(wtxt, font=fW); bx = (W - tw) / 2
-            dd.rounded_rectangle([bx - 30, 700, bx + tw + 30, 800], 18, fill=INK)
-            dd.text((bx, 708), wtxt, font=fW, fill=(255, 214, 120))
+            dd.rounded_rectangle([bx - 30, 560, bx + tw + 30, 660], 18, fill=INK)
+            dd.text((bx, 568), wtxt, font=fW, fill=(255, 214, 120))
         if t >= dur:  # chamada final
             k = min(1, (t - dur) / .25)
             msg = 'Comenta VÍDEO'; tw = dd.textlength(msg, font=fCTA)
-            yy = int(720 - 40 * (1 - k))
+            yy = int(560 - 40 * (1 - k))
             dd.rounded_rectangle([(W - tw) / 2 - 40, yy, (W + tw) / 2 + 40, yy + 130], 26, fill=ORANGE)
             dd.text(((W - tw) / 2, yy + 14), msg, font=fCTA, fill=(255, 255, 255))
         ff.stdin.write(fr.tobytes())
