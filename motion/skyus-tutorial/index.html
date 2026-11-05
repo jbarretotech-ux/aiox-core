@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8">
+<style>
+:root{--pu:#6c4bff;--pu2:#a48bff;--or:#ff6a1f;--bg:#0c0a1d;--ink:#f4f2ff;--mut:#9a95c0}
+*{box-sizing:border-box;margin:0;padding:0}
+body{width:1920px;height:1080px;overflow:hidden;background:#000}
+#v{position:relative;width:1920px;height:1080px;overflow:hidden;color:var(--ink);font-family:Inter,'DejaVu Sans',sans-serif;
+ background:radial-gradient(1100px 800px at 75% 40%,#2b1f6b 0%,var(--bg) 62%)}
+.dots{position:absolute;inset:0;background-image:radial-gradient(#ffffff12 1.6px,transparent 1.6px);background-size:34px 34px}
+.abs{position:absolute}
+#brand{left:80px;top:64px;font:800 26px Inter;letter-spacing:3px;color:var(--mut)}
+#brand b{color:var(--or)}
+#num{left:74px;top:150px;font:900 200px/1 Inter;letter-spacing:-8px;color:transparent;-webkit-text-stroke:3px var(--pu2)}
+#title{left:80px;top:380px;width:620px;font:900 72px/1.05 Inter;letter-spacing:-2px}
+#sub{left:82px;top:560px;width:600px;font:600 30px/1.35 Inter;color:var(--mut)}
+#chaps{left:82px;top:700px;width:600px;display:flex;flex-wrap:wrap;gap:8px}
+#chaps i{display:block;width:26px;height:8px;border-radius:4px;background:#ffffff22}
+#chaps i.on{background:var(--or)} #chaps i.done{background:var(--pu2)}
+/* janela */
+#win{left:760px;top:70px;width:1090px;height:880px;border-radius:28px;overflow:hidden;background:#f3f1fb;
+ box-shadow:0 40px 120px #000a,0 0 0 2px #ffffff18}
+#bar{left:0;top:0;width:100%;height:52px;background:#1b1736;display:flex;align-items:center;gap:10px;padding:0 22px;z-index:3}
+#bar i{width:14px;height:14px;border-radius:50%;background:#ff5f57}#bar i:nth-child(2){background:#febc2e}#bar i:nth-child(3){background:#28c840}
+#url{margin-left:20px;flex:1;height:32px;border-radius:16px;background:#2a2550;color:#c9c4ef;font:600 18px 'DejaVu Sans Mono';display:flex;align-items:center;padding-left:18px}
+#vp{left:0;top:52px;width:1090px;height:828px;overflow:hidden}
+#cam{position:absolute;left:0;top:0;width:1014px;height:1040px;transform-origin:0 0}
+#cam img{position:absolute;left:0;top:0;width:1014px;height:1040px}
+#hl{position:absolute;border:4px solid var(--or);border-radius:16px;box-shadow:0 0 0 9999px #0c0a1d33}
+#click{position:absolute;width:44px;height:44px;margin:-22px 0 0 -22px;border-radius:50%;background:var(--or);box-shadow:0 0 0 0 #ff6a1f88}
+#ring{position:absolute;width:44px;height:44px;margin:-22px 0 0 -22px;border-radius:50%;border:5px solid var(--or)}
+/* chat */
+#chat{position:absolute;inset:0;background:#faf9f5;padding:60px 70px;font-family:Inter}
+.msg{max-width:780px;border-radius:24px;padding:24px 30px;font:500 30px/1.4 Inter;margin-bottom:26px}
+.me{margin-left:auto;background:#ece7ff;color:#1b1736}
+.ai{background:#fff;border:2px solid #e8e4f5;color:#1b1736}
+.tool{display:inline-block;background:#1b1736;color:#c9c4ef;font:600 22px 'DejaVu Sans Mono';border-radius:12px;padding:10px 16px;margin:6px 0 12px}
+.ok{color:#14a36b;font-weight:800}
+#ex{position:absolute;right:24px;top:20px;background:var(--or);color:#000;font:800 20px Inter;padding:8px 16px;border-radius:20px}
+/* legenda */
+#cap{left:160px;width:1600px;top:978px;text-align:center;font:800 46px/1.2 Inter;letter-spacing:-.5px;text-shadow:0 3px 0 #000,0 0 18px #000}
+#cap span{margin:0 6px;opacity:.92}#cap span.on{color:var(--or);opacity:1}
+#prog{left:0;bottom:0;height:8px;background:var(--or);width:0}
+</style></head><body>
+<div id="v"><div class="dots"></div>
+<div id="brand" class="abs">JOTABE <b>IA</b> · TUTORIAL SKYUS</div>
+<div id="num" class="abs">00</div>
+<div id="title" class="abs"></div>
+<div id="sub" class="abs"></div>
+<div id="chaps" class="abs"></div>
+<div id="win" class="abs">
+ <div id="bar" class="abs"><i></i><i></i><i></i><div id="url">skyus.com.br/dashboard</div></div>
+ <div id="vp" class="abs">
+  <div id="cam"><img id="imA"><img id="imB"><div id="hl"></div><div id="ring"></div><div id="click"></div></div>
+  <div id="chat">
+   <div id="ex">EXEMPLO</div>
+   <div class="msg me" id="m1">Claude, agenda esse vídeo no Instagram do Jotabe, sexta ao meio-dia, com uma legenda curta e cinco hashtags.</div>
+   <div class="msg ai" id="m2"><div class="tool">skyus · schedule_post</div><br>Feito! ✅ Agendei o Reel para <b>sexta, 12:00</b> no <b>@jotabe.ia</b>.<br>Legenda: "Ensinei o Claude a postar sozinho 😎"<br>#ia #claude #skyus #marketingdigital #jotabeia</div>
+   <div class="msg me" id="m3">Mostra o que tem no calendário essa semana?</div>
+   <div class="msg ai" id="m4"><div class="tool">skyus · list_scheduled_posts</div><br><span class="ok">5 posts</span> agendados até domingo. Quer mudar algum horário?</div>
+  </div>
+ </div>
+</div>
+<div id="cap" class="abs"></div>
+<div id="prog" class="abs"></div>
+</div>
+<script src="timeline.js"></script>
+<script src="render.js"></script>
+</body></html>
